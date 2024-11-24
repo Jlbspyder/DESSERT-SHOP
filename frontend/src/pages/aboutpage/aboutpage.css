@@ -1,0 +1,35 @@
+.about-page {
+  background: var(--Beige);
+}
+.about {
+  margin: 0 20px 0 20px;
+  padding: 0 0 50px 20px;
+}
+.about h1 {
+  font-size: 20px;
+  letter-spacing: -1px;
+  color: var(--Red);
+}
+.about p {
+  font-size: 18px;
+}
+@media (min-width: 800px) {
+  .about {
+    padding-left: 50px;
+  }
+  .about p {
+    font-size: 20px;
+    width: 70%;
+  }
+}
+@media (min-width: 1000px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about p {
+    font-size: 20px;
+    width: 65%;
+  }
+}

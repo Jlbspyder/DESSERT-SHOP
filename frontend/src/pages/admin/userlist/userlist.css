@@ -1,0 +1,10 @@
+.userlist h1 {
+    text-align: center;
+    margin-top: 15px;
+}
+@media (min-width: 600px) {
+    .userlist {
+        width: 95%;
+        margin: auto;
+    }
+}

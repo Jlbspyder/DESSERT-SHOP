@@ -1,0 +1,36 @@
+.create-menu {
+  padding-inline: 10px;
+}
+.add-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.edt {
+  width: 20%;
+}
+#create {
+  margin: 10px 0 20px 0;
+}
+
+@media (min-width:600px) {
+  .edt {
+    width: 13%;
+  }
+}
+
+@media (min-width: 1025px) {
+  #create {
+    width: 80%;
+    margin: 20px auto;
+  }
+  .add-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+  }
+  .edt {
+    width: 10%;
+  }
+}

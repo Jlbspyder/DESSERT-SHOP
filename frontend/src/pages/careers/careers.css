@@ -1,0 +1,135 @@
+.career {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px 0 20px;
+  background: var(--Offwhite);
+  animation: zoom 0.5s ease-in-out;
+}
+.your-way {
+  width: 100%;
+  margin: 30px 0;
+}
+.career-menu {
+  display: flex;
+  gap: 10px;
+  padding-left: 1rem;
+}
+.career-menu a {
+  background: transparent;
+}
+.career-menu a:hover {
+  background: transparent;
+}
+.career-page {
+  color: var(--Red);
+}
+.career-image-container {
+  display: flex;
+  gap: 5px;
+  width: 85px;
+  height: 100px;
+}
+.career-image {
+  max-width: 100%;
+  border-radius: 5px;
+}
+.career-info {
+  text-align: center;
+  margin: 1rem 0;
+}
+.career-btn {
+  background: var(--Red);
+  border: none;
+  padding: 0.7em 1.3rem;
+  /* font-size: 1rem; */
+  font-weight: 600;
+  margin: 1rem;
+  color: var(--Offwhite);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.career-info a:hover {
+  background: transparent;
+}
+.career-btn:hover {
+  background: rgb(228, 89, 89);
+}
+.career-btn:active {
+  transform: scale(0.98);
+}
+.career-info a {
+  background: transparent;
+}
+.career-info h1 {
+  font-size: 25px;
+  margin-bottom: 1rem;
+}
+@media (min-width: 600px) and (max-width: 1000px) {
+  .career {
+    padding-left: 20px;
+  }
+  .career-menu {
+    margin-top: 20px;
+  }
+  .career-image-container {
+    gap: 1rem;
+    width: 180px;
+    height: 150px;
+  }
+  .career-info {
+    width: 70%;
+    margin: 1rem auto;
+  }
+}
+@media (min-width: 600px) and (max-width: 800px) {
+  .career-image-container {
+    width: 160px;
+    height: 150px;
+  }
+}
+@media (min-width: 1000px) {
+  .career-menu {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .career {
+    align-items: center;
+    margin-top: 50px;
+  }
+  .career-image-container {
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 90px 0;
+    width: 280px;
+  }
+  .career-image {
+    height: 280px;
+  }
+  .career-info {
+    width: 50%;
+  }
+  .career-info h1 {
+    font-size: 2.5rem;
+  }
+  .career-info p {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1050px) {
+  .career-image-container {
+    width: 220px;
+  }
+  .career-image {
+    height: 250px;
+  }
+}
+@media (min-width: 1050px) {
+  .career {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    padding: 10px 20px;
+    animation: zoom 0.5s ease-in-out;
+  }
+}

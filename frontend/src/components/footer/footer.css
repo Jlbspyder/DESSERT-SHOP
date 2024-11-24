@@ -1,0 +1,129 @@
+.footer,
+.footer-info
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+  padding-left: 1.5rem;
+  color: hsl(20, 50%, 98%);
+}
+
+.footer-logo {
+  margin-left: 28px;
+}
+footer {
+  padding-top: 1rem;
+  margin-left: 0;
+  background: hsl(12, 20%, 44%);
+}
+.footer li,
+.socials li {
+  list-style-type: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.footer li {
+  margin-bottom: 5px;
+}
+.footer a {
+  color: hsl(20, 50%, 98%);
+}
+.footer li:hover,
+.footer a:hover {
+  background: none;
+}
+.contact {
+  margin-top: 1rem;
+  color: hsl(20, 50%, 98%);
+  border-top: 1px solid;
+  padding: 0 0 1rem 1rem;
+
+}
+.socials {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+.icons {
+  width: 30px;
+  height: 30px;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+}
+footer h1 {
+  font-size: 1.6rem;
+  margin: 1rem 0;
+  color: hsl(20, 50%, 98%);
+}
+.footer-logo h1 {
+  margin-left: 1.5rem;
+}
+.socials a {
+  color: hsl(20, 50%, 98%);
+}
+.socials li:hover,
+.socials a:hover {
+  background: none;
+}
+@media (min-width: 600px) {
+  .footer {
+    flex-direction: row;
+    gap: 3rem;
+    width: 100%;
+  }
+  .footer-logo h1 {
+    margin: 1rem 1.5rem 0 0;
+  }
+  .footer h1 {
+    font-size: 1.5rem;
+  }
+  .contact {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    margin-inline: 1.5rem;
+  }
+  .socials {
+    margin: 0;
+  }
+  .socials li {
+    margin-left: 5px;
+  }
+  .icons {
+    width: 20px;
+    height: 20px;
+  }
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+  footer {
+    margin-left: 0;
+  }
+}
+@media (min-width: 600px) and (max-width: 1000px) {
+  footer h1, .footer h1 {
+    font-size: 1.3rem;
+  }
+  .footer-logo h1 {
+    margin-left: 2.5rem;
+  }
+  .footer a {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1000px) {
+  .footer-lg {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 2rem;
+  }
+  .footer-logo h1 {
+    margin-left: -20px;
+  }
+}

@@ -1,0 +1,35 @@
+.priv {
+  margin: 0 0 0 20px;
+}
+.privacy {
+  background: var(--Beige);
+}
+.priv-policy {
+  padding-inline: 1.5rem;
+  border-bottom: 1px solid var(--DarkBrown);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.priv-policy h4 {
+  color: var(--Red);
+  margin: 1rem 0;
+}
+.privy {
+  max-width: 100%;
+  margin-top: 1rem;
+}
+.priv-policy p {
+  font-size: 20px;
+}
+span {
+  font-style: italic;
+}
+@media (min-width: 600px) {
+  .privy {
+    height: 250px;
+    width: 100%;
+  }
+  .privacy {
+    overflow-x: hidden;
+  }
+}

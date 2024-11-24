@@ -1,0 +1,17 @@
+.admin-checkbox {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+    justify-content: start;
+}
+#admin-check {
+    margin-top: -5px;
+}
+@media (min-width: 600px) {
+    .admin {
+        width: 80%;
+        margin: auto;
+    }
+}

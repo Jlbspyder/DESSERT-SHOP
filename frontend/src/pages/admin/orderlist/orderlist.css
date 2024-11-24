@@ -1,0 +1,30 @@
+.orderlist {
+  padding-inline: 10px;
+  min-height: 350px;
+}
+.orderlist h1 {
+  padding-top: 10px;
+  text-align: center;
+}
+#orderlist {
+  margin-top: 10px;
+  width: 100%;
+}
+.check-details {
+  width: 50px;
+}
+@media (min-width: 600px) {
+  tr {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .orderlist h1 {
+    width: 80%;
+    margin: auto;
+  }
+  tr {
+    font-size: 16px;
+  }
+}

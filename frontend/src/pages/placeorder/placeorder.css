@@ -1,0 +1,130 @@
+.place-order {
+  margin-top: 1rem;
+}
+.order {
+  margin: 20px 30px;
+  padding-bottom: 10px;
+}
+.order-dets {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  height: 200px;
+  border: 1px solid var(--White);
+}
+.order-dets img {
+  width: 150px;
+  height: 150px;
+}
+#arrival {
+  margin: 10px 0;
+  padding: 10px;
+  height: 50px;
+  background: var(--White);
+  color: var(--Green);
+}
+.order-pricing {
+  border-bottom: 2px solid var(--White);
+  margin-top: 10px;
+  padding-inline: 10px;
+}
+.bill-sum {
+  margin-top: 10px;
+}
+.bill-sum h3,
+.bill-sum h4 {
+  font-size: 1.3rem;
+  color: var(--Black);
+  font-weight: 900;
+  padding-inline: 10px;
+}
+#info {
+  margin: 20px 0;
+  padding: 15px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(220, 212, 212);
+  color: var(--Black);
+}
+.place-order-info2 {
+  margin-top: 2rem;
+}
+#qty {
+  font-style: italic;
+  margin-top: 10px;
+}
+.order-details {
+  text-transform: uppercase;
+}
+.order-details span {
+  font-size: inherit;
+  text-transform: capitalize;
+  font-style: normal;
+}
+.payment-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cards {
+    display: flex;
+    margin-bottom: 10px;
+    gap: 5px;
+    font-size: 25px;
+}
+.ctrl input {
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid gray;
+    color: gray;
+}
+#payment {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+}
+.btn-straight {
+    border-radius: 0;
+    width: 100%;
+    margin: 10px 0;
+    font-weight: 600;
+    font-size: 16px;
+    height: 50px;
+}
+#payment-form {
+  width: 100%;
+  margin-right: 0;
+}
+.payment-infor a {
+    text-decoration: underline;
+}
+@media (min-width: 600px) {
+  .place-order-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    height: 150px;
+    padding: 10px;
+    width: 100%;
+  }
+  #info {
+    margin: 10px 0;
+  }
+}
+@media (min-width: 1000px) {
+  .place-order {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2rem;
+  }
+  .place-order-info1 {
+    width: 40%;
+  }
+  .place-order-info2 {
+    width: 55%;
+    margin-top: 0;
+  }
+}

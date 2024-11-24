@@ -1,0 +1,23 @@
+.offers-flex {
+  animation: zoom 0.5s ease-in-out;
+}
+.offers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  color: var(--Red);
+  font-size: 1.2rem;
+  font-style: italic;
+  text-align: center;
+}
+.offers-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+@media (min-width: 700px) {
+  .offers-flex {
+    gap: 0;
+  }
+}

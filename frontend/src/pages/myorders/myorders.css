@@ -1,0 +1,64 @@
+.my-orders {
+  margin-top: 10px;
+  padding-inline: 10px;
+  min-height: 350px;
+}
+table {
+  margin-top: 20px;
+  background: var(--White);
+  border-collapse: collapse;
+  border: 1px solid;
+}
+td {
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+}
+th,
+td {
+  padding: 5px;
+  text-align: center;
+}
+thead {
+  color: var(--Red);
+}
+tr {
+  font-size: 9px;
+}
+.check-details {
+    font-size: 9px;
+    height: 20px;
+    padding: 0.6em;
+}
+@media (min-width: 600px) {
+  table {
+    margin: 20px auto;
+  }
+  tr {
+    font-size: 16px;
+  }
+  th,
+  td {
+    height: 30px;
+    padding: 10px 15px;
+  }
+}
+@media (min-width: 600px) and (max-width: 700px) {
+  tr {
+    font-size: 10px;
+  }
+  th,
+  td {
+    padding: 5px 10px;
+  }
+}
+@media (min-width: 1025px) {
+  table {
+    width: 80%;
+    margin: 20px auto;
+  }
+  .check-details {
+    font-size: 9px;
+    height: 25px;
+    padding: 0.8em;
+}
+}

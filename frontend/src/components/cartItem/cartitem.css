@@ -1,0 +1,127 @@
+.cart-item {
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 0.5px solid rgb(218, 214, 214);
+  }
+  .cart-flex {
+    width: 70%;
+  }
+  .cart-image {
+    display: flex;
+    align-items: start;
+    gap: 5px;
+  }
+  .cart-info {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .cart-info p {
+    margin: 0;
+    font-style: italic;
+  }
+  .cart-info p {
+    color: var(--Red);
+    font-style: normal;
+  }
+  .cart-flex a {
+    color: var(--Black);
+  }
+  .quantity {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    top: 55%;
+    left: 32%;
+    width: 32%;
+    height: 35px;
+    border-radius: 0;
+    border: 1px solid rgb(241, 236, 236);
+  }
+  .cart-total {
+    width: 20%;
+    text-align: left;
+  }
+  .quantity:hover {
+    border: none;
+    color: black;
+  }
+  #lead {
+    display: none;
+  }
+  .delete-cart {
+    position: absolute;
+    font-size: 25px;
+    top: 60%;
+    right: 28%;
+  }
+  .decrement-btn, .increment-btn {
+    color: var(--Black);
+    font-size: 30px;
+  }
+  .decrement-btn:hover,
+  .increment-btn:hover {
+    color: gray;
+  }
+  @media (min-width: 600px) {
+    #lead {
+      display: block;
+    }
+    .cart-info {
+      width: 30%;
+    }
+    .quantity {
+      width: 20%;
+      top: 15%;
+      left: 43%;
+    }
+    .cart-quantity {
+      width: 50%;
+    }
+    .cart-total {
+      width: 11%;
+      margin-top: 1.2rem;
+      text-align: left;
+    }
+    .cart-image {
+      align-items: center;
+      gap: 10px;
+    }
+    .delete-cart {
+      position: absolute;
+      top: 20%;
+      right: 30%;
+      cursor: pointer;
+    }
+  }
+  @media (min-width: 800px) and (max-width: 1024px) {
+    .quantity {
+      width: 20%;
+      top: 15%;
+      left: 47%;
+    }
+    #lead {
+      width: 25%;
+      text-align: right;
+    }
+    .delete-cart {
+      top: 20%;
+      right: 29%;
+    }
+  }
+  @media(min-width: 1024px) {
+    .cart-total {
+      width: 6.5%;
+      margin-top: 0.5rem;
+      text-align: left;
+    }
+    .delete-cart {
+      top: 18%;
+      right: 30%;
+    }
+  }
+ 
+  

@@ -1,0 +1,850 @@
+.menu-list {
+  position: relative;
+  display: block;
+  padding-inline: 20px;
+  animation: zoom 0.5s ease-in-out;
+}
+.menu-list h2 {
+  color: var(--Black);
+  font-size: 40px;
+  margin: 1rem 0;
+}
+#search {
+  margin-left: -8px;
+  width: 100%;
+}
+.menu-flex {
+  display: block;
+  justify-content: space-between;
+}
+.search-menu {
+  height: 40px;
+  width: 40%;
+  border: none;
+  background: var(--Red);
+  color: var(--White);
+  font-weight: 600;
+}
+.menu-search {
+  display: flex;
+  width: 100%;
+}
+.search-menu:hover {
+  cursor: pointer;
+  opacity: 80%;
+  color: var(--Black);
+}
+.menu-search input {
+  width: 100%;
+  height: 40px;
+  padding-left: 10px;
+  border: none;
+}
+.menu-search input:focus {
+  outline: none;
+}
+.menu-image {
+  max-width: 100%;
+  border-radius: 5px;
+}
+.menu-image:hover {
+  transform: scale(0.98);
+  transition: all 0.2s ease-in-out;
+}
+.menu-image.active {
+  border: 3px solid var(--Red);
+}
+.menu-card {
+  position: relative;
+}
+.button {
+  position: absolute;
+  bottom: 150px;
+  left: 27%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: var(--White);
+  width: 50%;
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.button:hover {
+  border: 1.5px solid var(--Red);
+  color: var(--Red);
+}
+.button.active {
+  border: 1.5px solid var(--Red);
+  justify-content: space-around;
+  background: var(--Red);
+  color: var(--White);
+}
+.btn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.sign {
+  font-size: 35px;
+  color: rgb(205, 197, 197);
+  padding-top: 5px;
+  cursor: pointer;
+}
+.sign:hover {
+  color: var(--White);
+}
+.button h6 {
+  font-size: 14px;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0;
+  gap: 5px;
+  align-items: flex-start;
+  justify-content: center;
+}
+.description p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--Rose300);
+}
+.description h6 {
+  margin: 0;
+  font-size: 20px;
+}
+.description span {
+  color: var(--Red);
+  font-style: normal;
+  font-weight: 500;
+}
+.cart {
+  background: var(--White);
+  width: 100%;
+  margin: 0 0 18px 0;
+  padding-bottom: 1rem;
+}
+.basket {
+  background: var(--White);
+  animation: zoom 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border-bottom: 1px solid rgb(223, 213, 213);
+}
+.basket-notConfirm {
+  background: var(--Offwhite);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.thumb-pix {
+  width: 60px;
+  height: 50px;
+  border-radius: 3px;
+}
+.basket-item {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  margin: 5px 0 10px 5px;
+}
+.basket-confirm-set {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+.basket-item.confirm-basket {
+  flex-direction: row;
+  gap: 10px;
+  height: 90px;
+}
+.basket h5 {
+  color: var(--Red);
+  margin: 0;
+  font-size: 15px;
+}
+.basket p {
+  font-size: 15px;
+  margin: 0;
+  font-weight: 700;
+}
+.basket span {
+  font-size: 15px;
+  color: rgb(179, 175, 175);
+  font-style: normal;
+}
+#fullname {
+  display: none;
+}
+#abbrv-name {
+  display: block;
+}
+.delete-item {
+  cursor: pointer;
+  color: gray;
+  font-size: 25px;
+  margin-top: -5px;
+}
+.delete-item:hover {
+  color: var(--Black);
+}
+.order-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 12px;
+  background: var(--White);
+  margin: 20px;
+  border-radius: 5px;
+}
+.order-total p {
+  font-size: 20px;
+  animation: zoom 0.5s ease-in-out;
+}
+.order-total {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.total-confirm {
+  background: var(--Offwhite);
+}
+.carbon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: auto;
+  width: 85%;
+  height: 50px;
+  background: var(--Offwhite);
+  font-size: 16px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+.carbon.order-confirmed {
+  display: none;
+}
+.carbon span {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+}
+.confirm-order {
+  background: var(--Red);
+  width: 85%;
+  height: 50px;
+  font-size: 18px;
+  margin: 10px 10px 10px 30px;
+  border: none;
+  border-radius: 30px;
+  color: var(--White);
+  cursor: pointer;
+}
+.confirm-order:hover {
+  transform: scale(0.98);
+  background: rgb(145, 64, 64);
+  color: var(--White);
+}
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.empty-cart {
+  width: 120px;
+  height: 140px;
+}
+.empty p {
+  font-size: 20px;
+  text-align: center;
+}
+.cart h2 {
+  padding: 1rem 2.5rem 0 2rem;
+  text-align: left;
+  color: var(--Red);
+  font-size: 28px;
+}
+.fade {
+  margin-top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -200px;
+  z-index: 9999;
+}
+.gig {
+  position: fixed;
+  inset: 10% 0 0 0;
+  height: 100vh;
+  animation: zoom 0.5ms ease-in-out;
+  z-index: 9999;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+.cart-container {
+  padding-bottom: 100px;
+}
+.cart.gig .thumb-pix {
+  display: block;
+}
+.cart.gig .delete-item {
+  display: none;
+}
+.cart .item-price {
+  display: none;
+}
+.cart .thumb-pix {
+  display: none;
+}
+.gig .item-price {
+  display: block;
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.confirm {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0 20px 20px;
+}
+.not-confirm {
+  display: none;
+}
+.confirm p {
+  margin: 0;
+}
+.confirm h1 {
+  margin: 0;
+  font-size: 40px;
+  width: 50%;
+}
+#confirm {
+  margin-bottom: 20px;
+  color: var(--Green);
+  font-size: 50px;
+}
+.paginate {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  color: var(--Black);
+  margin: 10px auto;
+  border-radius: 5px;
+}
+.activePage {
+  color: var(--Red);
+  background: var(--White);
+  width: 20px;
+  height: 20px;
+  padding-inline: 5px;
+  border-radius: 5px;
+}
+
+@media (min-width: 600px) {
+  .menu-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 20px;
+  }
+  .menu-list h2 {
+    font-size: 30px;
+  }
+  .menu-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  #search {
+    padding-right: 0;
+  }
+  .search-menu {
+    height: 40px;
+    width: 40%;
+    border: none;
+    background: var(--Red);
+    color: var(--White);
+    font-weight: 600;
+    margin-right: -5px;
+  }
+  .menu-search input {
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    border: none;
+  }
+  .menu-image.active {
+    border: 2px solid var(--Red);
+  }
+  .menu-image-container {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 20px;
+  }
+  .button {
+    bottom: 40%;
+    left: 27%;
+    height: 25px;
+    width: 80px;
+  }
+  .sign {
+    font-size: 25px;
+    padding-inline: 5px;
+    padding-top: 5px;
+  }
+  .btn h5 {
+    font-size: 10px;
+  }
+  .cart {
+    height: 50%;
+    width: 30%;
+    border-radius: 5px;
+    z-index: 500;
+  }
+  .cart h2 {
+    font-size: 20px;
+    margin-top: 0;
+  }
+  .empty-cart {
+    width: 100px;
+    height: 70px;
+  }
+  .cart h2 {
+    padding: 1rem 1rem 0 1rem;
+    text-align: left;
+    color: var(--Red);
+  }
+  .btn {
+    justify-content: space-between;
+  }
+  .empty p {
+    font-size: 12px;
+    text-align: center;
+  }
+  .menu-card h6 {
+    font-size: 0.4rem;
+  }
+  .description {
+    margin: 20px 0;
+  }
+  .description h6 {
+    font-size: 12px;
+  }
+  .description p {
+    font-size: 14px;
+  }
+  .cart-icon {
+    width: 10px;
+    height: 10px;
+  }
+  .order-total p {
+    font-size: 14px;
+  }
+  .order-total {
+    font-size: 10px;
+  }
+  .total-confirm {
+    width: 83%;
+    margin-left: 5px;
+  }
+  .carbon {
+    width: 88%;
+    height: 30px;
+    font-size: 8px;
+  }
+  .carbon span {
+    font-size: 10px;
+    font-style: normal;
+  }
+  .confirm p {
+    margin: 0;
+    font-size: 12px;
+  }
+  .confirm h1 {
+    margin: 0;
+    font-size: 30px;
+    width: 100%;
+  }
+  #confirm {
+    margin-bottom: 20px;
+    color: var(--Green);
+    font-size: 50px;
+  }
+  .basket {
+    margin-inline: 5px;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  .basket-notConfirm {
+    background: var(--Offwhite);
+    padding: 10px;
+  }
+  .basket-confirm-set {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+  }
+  .basket p {
+    font-size: 10px;
+  }
+  .basket h5 {
+    color: var(--Red);
+    margin: 0;
+    font-size: 10px;
+  }
+  .basket span {
+    font-size: 10px;
+    color: rgb(179, 175, 175);
+    font-style: normal;
+  }
+  .delete-item {
+    font-size: 18px;
+  }
+  .thumb-pix {
+    width: 60px;
+    height: 50px;
+    border-radius: 3px;
+  }
+  .confirm-order {
+    width: 85%;
+    height: 28px;
+    font-size: 12px;
+    margin: 10px 10px 20px 20px;
+    border: none;
+    border-radius: 30px;
+    color: var(--White);
+  }
+  .carbon-img {
+    width: 12px;
+    height: 12px;
+  }
+}
+@media (min-width: 600px) and (max-width: 800px) {
+  .menu-image-container {
+    width: 60%;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 15px;
+  }
+  .menu-image {
+    height: 150px;
+  }
+  .button {
+    bottom: 44%;
+    left: 30%;
+    width: 50%;
+    height: 20px;
+  }
+  .button h6 {
+    font-size: 8px;
+  }
+  .description span {
+    font-size: 16px;
+  }
+  .basket p {
+    font-size: 25px;
+  }
+  .cart {
+    width: 36%;
+  }
+  .cart h2 {
+    font-size: 20px;
+  }
+  .basket-confirm-set p {
+    font-size: 15px;
+  }
+  .basket-item span,
+  .basket-item h5 {
+    font-size: 10px;
+  }
+  #fullname {
+    display: block;
+  }
+  #abbrv-name {
+    display: none;
+  }
+  .gig .item-price {
+    font-size: 25px;
+    font-weight: 600;
+  }
+  .confirm p {
+    font-size: 18px;
+  }
+  .confirm h1 {
+    font-size: 20px;
+  }
+  #confirm {
+    font-size: 60px;
+  }
+  .delete-item {
+    font-size: 18px;
+  }
+  .order-total p {
+    font-size: 18px;
+  }
+  .order-total h1 {
+    font-size: 18px;
+  }
+  .order-total {
+    font-size: 10px;
+    width: 100%;
+    margin: 10px 0;
+  }
+  .carbon {
+    width: 88%;
+    height: 30px;
+    font-size: 8px;
+  }
+  .carbon span {
+    font-size: 8px;
+  }
+  .confirm-order {
+    width: 89%;
+    height: 35px;
+    font-size: 10px;
+    margin: 10px 0 10px 15px;
+  }
+  .empty {
+    display: flex;
+    flex-direction: column;
+  }
+  .empty p {
+    font-size: 12px;
+  }
+  .empty-cart {
+    margin: 0;
+  }
+}
+@media (min-width: 800px) and (max-width: 1025px) {
+  .menu-image-container {
+    width: 90%;
+  }
+  .cart {
+    width: 35%;
+    min-height: 150px;
+    margin-top: -20px;
+    z-index: 500;
+  }
+  .button {
+    bottom: 120px;
+    left: 27%;
+    width: 50%;
+    height: 20px;
+  }
+  .order-total {
+    width: 87%;
+    margin-left: 5px;
+  }
+  .order-total p {
+    font-size: 15px;
+  }
+  .order-total {
+    font-size: 9px;
+  }
+  .carbon {
+    margin-top: -20px;
+  }
+  .total-confirm {
+    width: 87%;
+    margin-left: 10px;
+  }
+  .approve {
+    width: 90%;
+    height: 35px;
+  }
+  .description span {
+    font-size: 14px;
+  }
+  .basket-notConfirm {
+    margin-inline: 10px;
+    height: 40px;
+  }
+  .basket-confirm-set p {
+    font-size: 11px;
+  }
+  .basket-confirm-set h5,
+  .basket-confirm-set span {
+    font-size: 11px;
+  }
+  .confirm p {
+    margin: 0;
+    font-size: 12px;
+  }
+  .confirm h1 {
+    margin: 0;
+    font-size: 25px;
+  }
+  #confirm {
+    margin-bottom: 20px;
+    color: var(--Green);
+    font-size: 35px;
+  }
+  .thumb-pix {
+    width: 50px;
+    height: 45px;
+  }
+  .cart-container {
+    background: var(--White);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-bottom: 0;
+  }
+  #fullname {
+    display: block;
+  }
+  #abbrv-name {
+    display: none;
+  }
+  .gig {
+    position: absolute;
+    inset: 20% 0 0 33%;
+    height: 20%;
+    z-index: 9999;
+    overflow-y: visible;
+  }
+  .gig .item-price {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+@media (min-width: 1025px) {
+  .button {
+    bottom: 130px;
+    left: 28%;
+    width: 140px;
+    height: 30px;
+  }
+  .sign {
+    font-size: 30px;
+  }
+  .button h6 {
+    font-size: 12px;
+  }
+  .cart-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .menu-image-container {
+    width: 90%;
+  }
+  .cart h2 {
+    font-size: 24px;
+  }
+  .total-confirm {
+    width: 80%;
+    margin-left: 10px;
+  }
+  .order-total {
+    width: 97%;
+    margin-left: 0;
+  }
+  .order-total p {
+    font-size: 16px;
+  }
+  .description p {
+    font-size: 18px;
+  }
+  .description span {
+    font-size: 18px;
+  }
+  #rating svg {
+    color: var(--Red);
+    font-size: 18px;
+  }
+  #rating-text {
+    font-size: 15px;
+    padding: 0 0 0.2rem 0.5rem;
+    color: var(--Black);
+  }
+  .confirm p {
+    margin: 0;
+    font-size: 12px;
+  }
+  .confirm h1 {
+    margin: 0;
+    font-size: 30px;
+  }
+  #confirm {
+    margin-bottom: 20px;
+    color: var(--Green);
+    font-size: 40px;
+  }
+  .basket-notConfirm {
+    margin-inline: 20px;
+    height: 50px;
+    scroll-behavior: auto;
+  }
+  .basket p {
+    font-size: 12px;
+  }
+  .basket h5 {
+    font-size: 12px;
+  }
+  .basket span {
+    font-size: 12px;
+  }
+  .cart-container {
+    background: var(--White);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-bottom: 0;
+  }
+  .cart {
+    margin-top: -15px;
+    width: 30%;
+  }
+  .gig {
+    position: absolute;
+    inset: 8% 0 0 33%;
+    overflow-y: visible;
+    z-index: 9999;
+  }
+  .gig .item-price {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  #fullname {
+    display: block;
+  }
+  #abbrv-name {
+    display: none;
+  }
+  .empty {
+    background: var(--White);
+    border-radius: 5px;
+  }
+  .empty-cart {
+    width: 150px;
+    height: 170px;
+  }
+  .empty p {
+    font-size: 16px;
+  }
+  .confirm-order {
+    width: 88%;
+    height: 35px;
+  }
+  .total-confirm {
+    width: 83%;
+    margin-inline: 20px;
+  }
+  .delete-item {
+    margin-right: 10px;
+  }
+}

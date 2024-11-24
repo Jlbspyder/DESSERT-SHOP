@@ -1,0 +1,29 @@
+.reachout-page {
+    background: var(--Beige);
+    color: var(--Black);
+}
+.reach-out {
+    padding: 10px 20px 20px 30px;
+}
+.reach-out h1 {
+    margin: 0;
+    letter-spacing: -2px;
+}
+.reach-out p {
+    font-size: 20px;
+    letter-spacing: -1px;
+}
+.reach-out h2 {
+    color: var(--Black);
+}
+.reach-out h3 {
+    letter-spacing: -1px;
+}
+.reach-out span {
+    letter-spacing: -1px;
+}
+@media (min-width: 1000px) {
+    .reach-out {
+      padding-left: 50px;
+    }
+  }

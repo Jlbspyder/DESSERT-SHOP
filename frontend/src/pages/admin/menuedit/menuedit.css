@@ -1,0 +1,42 @@
+.menu-edit {
+  margin-top: 10px;
+}
+.menu-edit h1 {
+  text-align: center;
+}
+.edit-btn {
+  display: block;
+  width: 80px;
+  margin: 20px 0 0 10px;
+  color: var(--Red);
+  background: var(--White);
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  padding: 0.3em 1em;
+  font-size: 10px;
+  border: 1px solid var(--Beige);
+  animation: zoom 0.5s ease-in-out;
+  border-radius: 3px;
+}
+.upload {
+  margin-bottom: 0;
+}
+#upload {
+  padding-left: 0;
+  font-size: 14px;
+}
+
+@media (min-width: 600px) {
+  .edit-btn {
+    margin-left: 30px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .menu-edit {
+    width: 80%;
+    margin: auto;
+  }
+  .edit-btn {
+    margin-left: 20px;
+  }
+}

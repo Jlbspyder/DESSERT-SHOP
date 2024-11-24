@@ -1,0 +1,82 @@
+.our-desserts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: -20px;
+  background: var(--Beige);
+}
+.our-desserts h1 {
+  margin: 40px 0;
+  font-size: 45px;
+  letter-spacing: -3px;
+}
+.dessert-image {
+  width: 350px;
+  height: 220px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.dessert-image:hover {
+    transform: scale(0.99);
+    transition: 0.1s ease-in;
+}
+.responsibility-header.quality {
+  height: 200px;
+}
+.click {
+  height: 28px;
+  width: 30%;
+  font-size: 12px;
+  margin: 10px 0 20px 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.cake {
+  border: 1px solid var(--DarkBrown);
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+.cake a:hover, .dessert-wrapper a:hover {
+  background: none;
+}
+.cake h5 {
+  margin: 0 0 0 20px;
+  font-size: 18px;
+}
+@media (min-width:600px) and (max-width: 1000px) {
+  .dessert-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding-bottom: 50px;
+  }
+  .dessert-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 1000px) {
+  .dessert-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-bottom: 50px;
+  }
+  .dessert-image {
+    width: 370px;
+    height: 250px;
+  }
+  .click {
+    height: 30px;
+    width: 30%;
+    margin-bottom: 35px;
+    font-size: 14px;
+  }
+  .cake h5 {
+    font-size: 25px;
+    letter-spacing: -1px;
+  }
+}

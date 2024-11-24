@@ -1,0 +1,21 @@
+.allergens {
+    margin: 0 0 20px 0;
+}
+.allergens-info {
+    margin: -20px 0;
+    background: var(--Beige);
+    padding: 20px;
+}
+.allergens-info h2, .allergens-info h1  {
+    color: var(--Red);
+    letter-spacing: -1px;
+    margin: 1rem 0;
+}
+.allergens-info p {
+    font-size: 20px;
+}
+@media (min-width: 1000px) {
+      .allergens-info {
+        padding-left: 40px;
+      }
+}

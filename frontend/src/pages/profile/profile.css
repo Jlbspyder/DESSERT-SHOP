@@ -1,0 +1,125 @@
+.profile-page {
+    background: var(--OffWhite);
+  }
+  .profile-page-header {
+    font-size: 1.3rem;
+  }
+  .welcome {
+      position: absolute;
+      top: 20%;
+      left: 10%;
+  }
+  .welcome-top, .welcome-middle, .welcome-bottom {
+      background: var(--Black);
+      margin: 0;
+      width: 280px;
+      height: 60px;
+      border-radius: 5px;
+      color: var(--White);
+  }
+  .welcome-bottom {
+    width: 100%;
+    background: var(--Red);
+  }
+  .welcome-top {
+      width: 240px;
+  }
+  .welcome-bottom h1 {
+    padding: 8px;
+  }
+  .welcome-top h1, .welcome-middle h1 {
+      padding-top: 8px;
+  }
+  .profile-page h3 {
+    font-weight: 400;
+  }
+  .profile-page h1 {
+    text-align: center;
+  }
+  .profileMenu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: var(--Black);
+    border: 1px solid var(--LightBrown);
+    cursor: pointer;
+  }
+  .profile-page-flex {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .profile-page-image {
+      position: relative;
+      width: 100%;
+      height: 320px;
+    }
+    .random-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+    }
+  @media (min-width: 650px) {
+    .profile-page {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      gap: 2rem;
+      z-index: 7777;
+    }
+    .profile-page a:hover {
+      color: var(--Red);
+    }
+    .profile-page-header {
+        padding-top: 0.5rem;
+    }
+    .profile-page-flex {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 380px;
+      padding-inline: 10px ;
+      margin: 30px 0 10px 0;
+      z-index: 7777;
+    }
+    .profileMenu {
+      gap: 1rem;
+    }
+    .profile-menu {
+      box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    }
+    .profile-menu-list {
+      width: 55%;
+      height: 100%;
+    }
+    .profile-page h3 {
+      font-weight: 400;
+    }
+    .profile-page h1 {
+      display: block;
+    }
+    .random-img {
+      max-width: 100%;
+      height: 360px;
+      border-radius: 5px;
+    }
+  }
+  @media (min-width: 1000px) {
+     .profile-page-flex {
+      margin: 20px auto;
+      width: 80%;
+    }
+     .profile-page-image {
+      width: 100%;
+      height: 100%;
+    }
+    .profile-menu-list {
+      width: 40%;
+      height: 100%;
+    }
+    .random-img {
+      height: 362px;
+    }
+  }
+  

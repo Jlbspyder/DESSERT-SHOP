@@ -1,0 +1,15 @@
+.chckout {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+#inactive {
+  color: gray;
+  cursor: pointer;
+}
+#active {
+  color: var(--Red);
+  cursor: default;
+}
+
