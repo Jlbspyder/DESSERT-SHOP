@@ -1,11 +1,14 @@
 header {
-  position: relative;
+  position: fixed;
+  top: 0;
   background: var(--Beige);
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60px;
   padding-inline: 1rem;
+  z-index: 9999;
 }
 #logo {
   color: var(--Red);
@@ -130,6 +133,9 @@ small {
   .basket-total {
     top: -10px;
   }
+  .navigation {
+    width: 78%;
+  }
   .nav {
     display: flex;
     position: static;
@@ -196,6 +202,10 @@ small {
     top: 60px;
     right: 0;
     width: 150px;
+  }
+  .profile-menu {
+    justify-content: flex-end;
+    width: 70%;
   }
 }
 @media (min-width: 1000px) {

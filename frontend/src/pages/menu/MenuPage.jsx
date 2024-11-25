@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import './menupage.css';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Spinner from '../../components/Spinner';
 import MenuList from '../../components/MenuList';
 import { useSelector } from 'react-redux';
@@ -11,9 +10,9 @@ import SearchBox from '../../components/SearchBox';
 
 const MenuPage = () => {
   const { pageNumber, keyword } = useParams();
+
   const { data, isLoading, error } = useGetMenuQuery({ pageNumber, keyword});
 
-  const navigate = useNavigate();
   
 
   const cart = useSelector((state) => state.cart);
@@ -30,7 +29,7 @@ const MenuPage = () => {
     <div className='menu-list'>
       <div className="menu-flex">
         <h2>Desserts</h2>
-        <div><SearchBox /></div>
+        <div className='sm-search'><SearchBox /></div>
       </div>
       <div className='menu-wrapper'>
         {isLoading ? (

@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useGetMenuQuery } from '../../slices/menuApiSlice';
 import { addToCart, removeFromCart, deleteCart } from '../../slices/cartSlice';
 import { BiPlusCircle } from 'react-icons/bi';
 import { BiMinusCircle } from 'react-icons/bi';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-
 import './cartitem.css';
 
-const CartItem = ({item, quan, thumbnail, name, price, _id, image }) => {
-  // const { data: menu, isLoading, error } = useGetMenuQuery();
-  // const navigate = useNavigate();
+const CartItem = ({item, quan, thumbnail, name, price, _id }) => {
+ 
   const dispatch = useDispatch()
 
 

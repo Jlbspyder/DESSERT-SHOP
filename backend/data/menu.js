@@ -157,68 +157,68 @@ const desserts = [
 const address = [
   {
     id: "1",
-    title: "Victoria Island",
-    name: "vi",
+    name: "Victoria Island",
+    region: "vi",
     location: "274, Ajose Adeogun"
   },
   {
     id: "2",
-    title: "Palms",
-    name: "palms",
+    name: "Palms",
+    region: "palms",
     location: "1, Bisway Street, Maroko, Lekki"
   },
   {
     id: "3",
-    title: "Lekki",
-    name: "lekki",
+    name: "Lekki",
+    region: "lekki",
     location: "11b, Victoria Arobieke Street, Lekki Phase 1"
   },
   {
     id: "4",
-    title:  "Agungi",
-    name: "lekki",
+    name:  "Agungi",
+    region: "lekki",
     location: "10, Agungi Ajiran Road, Agungi"
   },
   {
     id: "5",
-    title: "Yaba",
-    name: "yaba",
+    name: "Yaba",
+    region: "yaba",
     location: "282, Herbert Macaulay Way"
   },
   {
     id: "6",
-    title: "Gbagada",
-    name: "gbagada",
+    name: "Gbagada",
+    region: "gbagada",
     location: "296, Gbagada-Oworonshoki Expressway "
   },
   {
     id: "7",
-    title: "Festac",
-    name: "festac",
+    name: "Festac",
+    region: "festac",
     location: "132, Festac Access Road"
   },
   {
     id: "8",
-    title: "Ajah",
-    name: "ajah",
+    name: "Ajah",
+    region: "ajah",
     location: "237, Lekki-Epe Expressway, Ajah"
   },
   {
     id: "9",
-    title: "Ikeja GRA",
-    name: "ikeja",
+    name: "Ikeja GRA",
+    region: "ikeja",
     location: "32, Joel Ogunnaike Street"
   },
   {
     id: "10",
-    title: "Ikeja City mall",
-    name: "ikeja",
+    name: "Ikeja City mall",
+    region: "ikeja",
     location: "Obafemi Awolowo Way, Alausa, Ikeja"
   },
   {
     id: "11",
-    title: "Surulere",
-    name: "surulere",
+    name: "Surulere",
+    region: "surulere",
     location: "69 Adeniran Odunsanya Street, Surulere"
   }
 ]

@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 65px;
   background: var(--Offwhite);
   animation: zoom 0.5s ease-in-out;
 }
@@ -22,16 +23,6 @@
   z-index: 99;
   cursor: pointer;
   color: var(--Red);
-}
-select {
-  width: 28%;
-  height: 40px;
-  padding-left: 10px;
-  border-radius: 5px;
-  border: none;
-}
-select:focus {
-  outline: none;
 }
 .item-pix {
   width: 100%;
@@ -68,10 +59,18 @@ select:focus {
   font-weight: 600;
 }
 .in-stock {
+  position: relative;
   width: 50%;
+  height: 80px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+}
+#choose-quan {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  width: 70%;
 }
 #reviews {
   display: flex;
@@ -79,6 +78,13 @@ select:focus {
   align-items: start;
   margin-top: 1rem;
   width: 100%;
+}
+#write-review {
+  margin-left: 30px;
+  padding-bottom: 20px;
+}
+#write-review a {
+  color: var(--Red);
 }
 #comments {
   border: none;
@@ -116,11 +122,6 @@ select:focus {
   .sm-back-btn {
     display: none;
   }
-  select {
-    width: 30%;
-    height: 40px;
-    padding-left: 10px;
-  }
   .in-stock {
     width: 25%;
   }
@@ -145,8 +146,9 @@ select:focus {
     justify-content: center;
     gap: 10px;
   }
-  select {
-    height: 30px;
+  #choose-quan {
+    left:35px;
+    width: 70%;
   }
 }
 @media (min-width: 1000px) {
@@ -162,15 +164,15 @@ select:focus {
     font-size: 25px;
     width: 70%;
   }
-  select {
-    width: 25%;
-    height: 30px;
-  }
   .in-stock {
     width: 15%;
     display: flex;
     justify-content: center;
     gap: 10px;
+  }
+  #choose-quan {
+    left: 20px;
+    width: 80%;
   }
   #reviews {
     width: 900px;

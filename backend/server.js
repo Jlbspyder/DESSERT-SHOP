@@ -10,6 +10,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import { desserts, address } from './data/menu.js';
 const port = process.env.PORT || 5000;
 import uploadRoute from './routes/uploadRoute.js';
+import addressRoute from './routes/addressRoute.js'
 import menuRoute from './routes/menuRoute.js';
 import userRoute from './routes/userRoute.js';
 import orderRoute from './routes/orderRoute.js';
@@ -21,10 +22,6 @@ connectDB();
 const app = express();
 app.use(cors());
 
-// app.get('/', (req, res) => {
-//     res.send('API is running...');
-//   });
-
 // Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -32,6 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 // Cookie parser middleware
 app.use(cookieParser());
 
+app.use('api/address', addressRoute);
 app.use('/api/menu', menuRoute);
 app.use('/api/users', userRoute);
 app.use('/api/orders', orderRoute);
@@ -60,9 +58,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.get('/api/desserts', (req, res) => {
-  res.json(desserts);
-});
 app.get('/api/address', (req, res) => {
   res.json(address);
 });

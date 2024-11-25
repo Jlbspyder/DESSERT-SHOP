@@ -1,9 +1,9 @@
 .allergens {
-    margin: 0 0 20px 0;
+    margin: 0;
 }
 .allergens-info {
-    margin: -20px 0;
-    background: var(--Beige);
+    margin: 40px 0 0 0;
+    background: var(--Offwhite);
     padding: 20px;
 }
 .allergens-info h2, .allergens-info h1  {

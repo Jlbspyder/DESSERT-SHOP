@@ -4,24 +4,30 @@ import { Link, useParams } from 'react-router-dom';
 import Spinner from '../../../components/Spinner';
 import { toast } from 'react-toastify';
 import Paginate from '../../../components/PaginateMenu';
-import { useGetMenuQuery, useCreateMenuMutation, useDeleteMenuMutation } from '../../../slices/menuApiSlice';
+import {
+  useGetMenuQuery,
+  useCreateMenuMutation,
+  useDeleteMenuMutation,
+} from '../../../slices/menuApiSlice';
 import './menulist.css';
 
 const MenuListPage = () => {
   const { pageNumber } = useParams();
 
-  const { data, isLoading, refetch } = useGetMenuQuery({pageNumber});
+  const { data, isLoading, refetch } = useGetMenuQuery({ pageNumber });
 
-  const [createMenu, { isLoading: loadingCreateMenu}] = useCreateMenuMutation();
- 
-  const [deleteMenu, { isLoading: loadingDeleteMenu}] = useDeleteMenuMutation();
+  const [createMenu, { isLoading: loadingCreateMenu }] =
+    useCreateMenuMutation();
+
+  const [deleteMenu, { isLoading: loadingDeleteMenu }] =
+    useDeleteMenuMutation();
 
   const deleteHandler = async (id) => {
     if (window.confirm('Are you sure?')) {
       try {
-        await deleteMenu(id)
+        await deleteMenu(id);
         refetch();
-        toast.success('Menu deleted')
+        toast.success('Menu deleted');
       } catch (error) {
         toast.error(error?.data?.message || error.error);
       }
@@ -34,16 +40,19 @@ const MenuListPage = () => {
         await createMenu();
         refetch();
       } catch (error) {
-        toast.error(error?.data?.message || error.error)
+        toast.error(error?.data?.message || error.error);
       }
     }
-  }
+  };
 
   return (
     <div className='create-menu'>
       <div className='add-menu'>
         <h1>Menu</h1>
-        <button className='confirm-order btn-straight check-details edt' onClick={createMenuHandler}>
+        <button
+          className='confirm-order btn-straight check-details edt'
+          onClick={createMenuHandler}
+        >
           <FaEdit /> Add Menu
         </button>
       </div>
@@ -72,19 +81,19 @@ const MenuListPage = () => {
                   <td>{menu.category}</td>
                   <td>{menu.price}</td>
                   <td>
-                    <Link to={`/admin/menu/${menu._id}/edit`}>
-                      <button className='confirm-order btn-straight check-details'>
-                        <FaEdit />
+                    <div className='pp'>
+                      <Link to={`/admin/menu/${menu._id}/edit`}>
+                        <button className='confirm-order btn-straight check-details'>
+                          <FaEdit />
+                        </button>
+                      </Link>
+                      <button
+                        className='confirm-order btn-straight check-details'
+                        onClick={() => deleteHandler(menu._id)}
+                      >
+                        <FaTrash />
                       </button>
-                    </Link>
-                  </td>
-                  <td>
-                    <button
-                      className='confirm-order btn-straight check-details'
-                      onClick={() => deleteHandler(menu._id)}
-                    >
-                      <FaTrash />
-                    </button>
+                    </div>
                   </td>
                 </tr>
               ))}

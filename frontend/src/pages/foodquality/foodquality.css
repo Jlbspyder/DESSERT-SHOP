@@ -5,15 +5,13 @@
   width: 100%;
   padding: 20px;
   margin-bottom: -20px;
-  background: var(--Beige);
+  background: var(--Offwhite);
 }
-.our-desserts h1 {
-  margin: 40px 0;
-  font-size: 45px;
-  letter-spacing: -3px;
+.responsibility-header h1 {
+  margin: 0 20px;
 }
 .dessert-image {
-  width: 350px;
+  width: 100%;
   height: 220px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -57,6 +55,9 @@
     border-radius: 10px;
     margin-bottom: 10px;
   }
+  .responsibility-header h1 {
+    margin: 0 40px;
+  }
 }
 @media (min-width: 1000px) {
   .dessert-wrapper {
@@ -66,8 +67,8 @@
     padding-bottom: 50px;
   }
   .dessert-image {
-    width: 370px;
-    height: 250px;
+    width: 100%;
+    height: 200px;
   }
   .click {
     height: 30px;
@@ -78,5 +79,16 @@
   .cake h5 {
     font-size: 25px;
     letter-spacing: -1px;
+  }
+  .responsibility-header h1 {
+    margin: 0 100px;
+  }
+}
+@media (min-width: 1500px) {
+  .dessert-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding-bottom: 50px;
   }
 }

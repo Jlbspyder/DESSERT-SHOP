@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { BiPlusCircle } from 'react-icons/bi';
 import { toast } from 'react-toastify';
 import { BiMinusCircle } from 'react-icons/bi';
-import { useGetMenuDetailsQuery, useCreateReviewMutation } from '../slices/menuApiSlice';
+import { useGetMenuDetailsQuery } from '../slices/menuApiSlice';
 import { addToCart, removeFromCart } from '../slices/cartSlice';
 import Rating from '../components/Rating';
 

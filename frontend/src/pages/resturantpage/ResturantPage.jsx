@@ -1,68 +1,45 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate, Link, useParams } from 'react-router-dom';
 import { FaLocationArrow } from 'react-icons/fa';
-import { IoMdClose } from 'react-icons/io';
-import axios from 'axios';
-import { APIProvider, Map, AdvancedMarker, Pin, InfoWindow } from '@vis.gl/react-google-maps';
+import { useGetAddressQuery, useGetAddressDetailsQuery } from '../../slices/addressApiSlice';
+import PaginateAddress from '../../components/PaginateAddress';
+import Spinner from '../../components/Spinner';
+import {
+  APIProvider,
+  Map,
+  AdvancedMarker,
+  Pin,
+  InfoWindow,
+} from '@vis.gl/react-google-maps';
 import './resturantpage.css';
 
 const ResturantPage = () => {
-  const [locations, setLocations] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [address, setAddress] = useState(false);
   const [open, setOpen] = useState(false);
+  const [word, setWord] = useState('');
+
+
+  const { pageNumber, keyword, id } = useParams();
+  const {
+    data,
+    isLoading,
+  } = useGetAddressQuery({ pageNumber, keyword });
+
+
+  const { data: addy, refetch } = useGetAddressDetailsQuery(id);
 
   const position = { lat: 6.52, lng: 3.37 };
 
   const navigate = useNavigate();
 
-  const fetchLocations = async () => {
-    const { data } = await axios.get('/api/address');
-    setLocations(data);
-    if (data.status === 404) {
-      setLocations([]);
-      return;
-    }
-    fetchLocations();
-  };
-
-  useEffect(() => {
-    fetchLocations();
-  }, []);
-
-  const searchRef = useRef();
-
-  const search = () => {
-    const searchValue = searchRef.current.value;
-    if (searchValue.trim()) {
-      const fetchSearch = async () => {
-        const { data } = await axios.get(`/api/address?name=${searchValue}`);
-        setLocations(data);
-        setAddress(true);
-      };
-
-      fetchSearch();
-    } else {
-      fetchLocations();
-      setAddress(false);
-    }
-  };
-  const handleSearch = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
-    search();
+    if (word.trim()) {
+      navigate(`/resturant/search/${word}`);
+      setWord('')
+    } else {
+      navigate('/');
+    }
   };
-  const closeSearch = () => {
-    searchRef.current.value = '';
-    setAddress(false);
-  };
-
-  useEffect(() => {
-    const fetchLocations = async () => {
-      const { data } = await axios.get('/api/address');
-      setLocations(data);
-    };
-    fetchLocations();
-  }, []);
 
   return (
     <div className='resturant'>
@@ -82,41 +59,55 @@ const ResturantPage = () => {
         </div>
         <div className='main-resturant'>
           <div className='resturant-sidebar'>
-            <form>
+            <form onSubmit={submitHandler}>
               <div className='search'>
                 <input
                   type='text'
+                  name='q'
                   placeholder='Please, enter your location'
-                  ref={searchRef}
-                  onChange={search}
+                  value={word}
+                  onChange={(e) => setWord(e.target.value)}
                 />
-                {address ? (
-                  <IoMdClose className='search-icon' onClick={closeSearch} />
-                ) : (
-                  <FaLocationArrow className='search-icon' />
-                )}
+                  <FaLocationArrow onClick={submitHandler} className='search-icon' />
               </div>
             </form>
             <h1>Resturants</h1>
-            <div className='resturant-locations'>
-              {locations.map((location) => (
-                <div key={location.id} className='addresses'>
-                  <h2>{location.title}</h2>
-                  <p>{location.location}</p>
-                  <span>
-                    <p>Show on map</p>
-                  </span>
-                </div>
-              ))}
-            </div>
+            {isLoading ? (
+              <Spinner />
+            ) : (
+              <div className='resturant-locations'>
+                {data.map((location) => (
+                  <div key={location.id} className='addresses'>
+                    <h2>{location.name}</h2>
+                    <p>{location.location}</p>
+                    <span>
+                      <p>Show on map</p>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
+          <PaginateAddress
+            pages={data?.pages}
+            page={data?.page}
+            keyword={keyword ? keyword : ''}
+          />
           <APIProvider apiKey={import.meta.env.REACT_APP_MAP_KEY}>
             <div className='map'>
               <Map zoom={9} center={position} mapId='b532c0b0dff4db16'>
-                <AdvancedMarker position={position} onClick={() => setOpen(true)}></AdvancedMarker>
-                {open && <InfoWindow position={position} onCloseClick={() => setOpen(false)}>
+                <AdvancedMarker
+                  position={position}
+                  onClick={() => setOpen(true)}
+                ></AdvancedMarker>
+                {open && (
+                  <InfoWindow
+                    position={position}
+                    onCloseClick={() => setOpen(false)}
+                  >
                     <p>This is it</p>
-                  </InfoWindow>}
+                  </InfoWindow>
+                )}
               </Map>
             </div>
           </APIProvider>

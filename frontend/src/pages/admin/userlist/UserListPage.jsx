@@ -58,20 +58,28 @@ const UserListPage = () => {
                   )}
                 </td>
                 <td>
-                  <Link to={`/admin/user/${user._id}/edit`}>
-                    <button className='confirm-order btn-straight check-details'>
-                      <FaEdit />
+                  <div className="pp">
+                    <Link to={`/admin/user/${user._id}/edit`}>
+                      <button className='confirm-order btn-straight check-details'>
+                        <FaEdit />
+                      </button>
+                    </Link>
+                    <button
+                      onClick={() => deleteHandler(user._id)}
+                      className='confirm-order btn-straight check-details'
+                    >
+                      <FaTrash />
                     </button>
-                  </Link>
+                  </div>
                 </td>
-                <td>
+                {/* <td>
                   <button
                     onClick={() => deleteHandler(user._id)}
                     className='confirm-order btn-straight check-details'
                   >
                     <FaTrash />
                   </button>
-                </td>
+                </td> */}
               </tr>
             ))}
           </tbody>

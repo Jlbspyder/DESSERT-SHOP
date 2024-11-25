@@ -12,20 +12,12 @@ import { useGetTopMenuQuery } from '../../slices/menuApiSlice';
 import './homepage.css'
 
 const Hero = () => {
-  const [desserts, setDesserts] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchPosition, setTouchPosition] = useState(null);
   const [text, setText] = useState('');
 
   const { data: menu, isLoading } = useGetTopMenuQuery();
 
-  useEffect(() => {
-    const fetchDesserts = async () => {
-      const { data } = await axios.get('/api/desserts');
-      setDesserts(data)
-    }
-    fetchDesserts()
-  }, [])
 
   const topMenuImg = menu?.map((el) => el.img )
   const length = topMenuImg?.length;

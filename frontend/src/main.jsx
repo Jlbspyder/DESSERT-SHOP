@@ -52,6 +52,10 @@ const router = createBrowserRouter(
       <Route path='/menu/search/:keyword/page/:pageNumber' element={<MenuPage />} />
       <Route path='/menu/:id' element={<ItemPage />} />
       <Route path='/resturant' element={<ResturantPage />} />
+      <Route path='/resturant/search/:keyword' element={<ResturantPage />} />
+      <Route path='/resturant/page/:pageNumber' element={<ResturantPage />} />
+      <Route path='/resturant/search/:keyword' element={<ResturantPage />} />
+      <Route path='/resturant/search/:keyword/page/:pageNumber' element={<ResturantPage />} />
       <Route path='/info' element={<Allergens />} />
       <Route path='/quality' element={<FoodQuality />} />
       <Route path='/responsibility' element={<ResponsibilityPage />} />

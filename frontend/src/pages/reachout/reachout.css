@@ -1,12 +1,14 @@
 .reachout-page {
-    background: var(--Beige);
+    background: var(--Offwhite);
     color: var(--Black);
 }
 .reach-out {
+    margin-top: 70px;
     padding: 10px 20px 20px 30px;
 }
 .reach-out h1 {
     margin: 0;
+    color: var(--Red);
     letter-spacing: -2px;
 }
 .reach-out p {
@@ -14,7 +16,7 @@
     letter-spacing: -1px;
 }
 .reach-out h2 {
-    color: var(--Black);
+    color: var(--Red);
 }
 .reach-out h3 {
     letter-spacing: -1px;

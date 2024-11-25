@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { FaSearch } from "react-icons/fa";
 
 
 const SearchBox = () => {
@@ -17,7 +18,7 @@ const SearchBox = () => {
   };
 
   return (
-    <form id='search' onSubmit={submitHandler}>
+    <form className='find sm-search md-search' onSubmit={submitHandler}>
       <div className='menu-search'>
         <input
           type='text'
@@ -26,7 +27,9 @@ const SearchBox = () => {
           onChange={(e) => setKeyword(e.target.value)}
           placeholder='Search Menu...'
         />
-      <button type='submit' className='search-menu'>SEARCH</button>
+      <button type='submit' className='search-menu'>
+        <FaSearch />
+      </button>
       </div>
     </form>
   );
