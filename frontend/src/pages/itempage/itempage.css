@@ -24,6 +24,9 @@
   cursor: pointer;
   color: var(--Red);
 }
+select {
+
+}
 .item-pix {
   width: 100%;
 }
@@ -66,6 +69,16 @@
   align-items: center;
   justify-content: center;
 }
+select {
+  width: 28%;
+  height: 30px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: none;
+}
+select:focus {
+  outline: none;
+} 
 #choose-quan {
   position: absolute;
   top: 10px;
