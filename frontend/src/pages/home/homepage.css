@@ -1,5 +1,6 @@
 .hero {
   animation: zoom 0.5s ease-in-out;
+  margin-top: 65px;
 }
 .dessert {
   opacity: 0;
