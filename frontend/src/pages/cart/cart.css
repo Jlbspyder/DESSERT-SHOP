@@ -1,9 +1,12 @@
 .your-cart {
     position: relative;
-    margin: 20px 20px 50px 20px;
+    margin: 80px 20px 50px 20px;
     display: flex;
     flex-direction: column;
     animation: zoom 0.5s ease-in-out;
+  }
+  .cart-header h2 {
+    color: var(--Red);
   }
   .your-cart a:hover {
     background: transparent;
