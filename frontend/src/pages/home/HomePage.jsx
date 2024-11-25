@@ -27,7 +27,10 @@ const Hero = () => {
     fetchDesserts()
   }, [])
 
-  const length = menu.length;
+  const topMenuImg = menu?.map((el) => el.img )
+  const length = topMenuImg?.length;
+
+
 
   const navigate = useNavigate();
 
