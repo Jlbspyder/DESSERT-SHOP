@@ -25,7 +25,7 @@ const ResturantPage = () => {
   } = useGetAddressQuery({ pageNumber, keyword });
 
 
-  const { data: addy, refetch } = useGetAddressDetailsQuery(id);
+  // const { data: addy, refetch } = useGetAddressDetailsQuery(id);
 
   const position = { lat: 6.52, lng: 3.37 };
 
