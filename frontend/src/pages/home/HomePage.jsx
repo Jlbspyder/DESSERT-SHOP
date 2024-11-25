@@ -27,7 +27,7 @@ const Hero = () => {
     fetchDesserts()
   }, [])
 
-  const length = desserts.length;
+  const length = menu.length;
 
   const navigate = useNavigate();
 
