@@ -30,7 +30,7 @@ import Cart from './pages/cart/Cart.jsx';
 import RegisterPage from './pages/register/RegisterPage.jsx';
 import LogIn from './pages/LoginPage.jsx';
 import ProfilePage from './pages/profile/ProfilePage.jsx';
-import ShippingPage from './pages/shipping/SHippingPage.jsx';
+import ShippingPage from './pages/shipping/ShippingPage.jsx';
 import PlaceOrderPage from './pages/placeorder/PlaceOrderPage.jsx';
 import OrderSummary from './pages/summary/OrderSummary.jsx';
 import ChangePassword from './pages/details/ChangePassword.jsx';
