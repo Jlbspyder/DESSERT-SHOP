@@ -58,8 +58,6 @@ const PlaceOrderPage = () => {
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
-  const arrival = new Date().getHours() + 1;
-
   const freeShipping = shippingPrice == 0 && 'FREE';
 
   useEffect(() => {
@@ -97,14 +95,12 @@ const PlaceOrderPage = () => {
   };
   return (
     <div className='order'>
-      <h2>CHECKOUT</h2>
       <CheckoutSteps step1 step2 step3 />
+      <br/>
+      <h2>CHECKOUT</h2>
       <div className='place-order'>
         <div className='place-order-info1'>
-          <h3 id='arrival'>ESTIMATED ARRIVAL:&nbsp; &nbsp;&nbsp; &nbsp; {<Timer duration={60 * 60 * 1000} />}&nbsp; &nbsp;<span>if you place the order now</span></h3>
-          <>
-            
-            </>
+          <h3 id='arrival'>ESTIMATED ARRIVAL:&nbsp;&nbsp; {<Timer duration={60 * 60 * 1000} />}&nbsp; &nbsp;<span>if you place the order now</span></h3>
           <div className='order-summary'>
             {cartItems.map((item, index) => (
               <div key={index} className='order-dets'>

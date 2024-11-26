@@ -30,7 +30,6 @@ const ChangePassword = () => {
 
   const [signout] = useLogoutMutation();
 
-  console.log(userInfo)
 
   const [updateProfile, { isLoading: loadingProfileUpdate, error }] =
     useProfileMutation();
@@ -85,7 +84,6 @@ const ChangePassword = () => {
           value={formData.name}
           required
           onChange={handleChange}
-        //   onChange={(e) => setName(e.target.value)}
         />
       </div>
       <div className='form-control'>
@@ -97,29 +95,28 @@ const ChangePassword = () => {
           placeholder='Enter email'
           required
           onChange={handleChange}
-        //   onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div className='form-control'>
-        <label>Password</label>
+        <label>Password*</label>
         <input
           type='password'
           name='password'
+          required
           placeholder='Enter password'
           value={formData.password}
           onChange={handleChange}
-        //   onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       <div className='form-control'>
-        <label>Confirm Password</label>
+        <label>Confirm Password*</label>
         <input
           type='password'
           name='confirmPassword'
+          required
           placeholder='Confirm password'
           value={formData.confirmPassword}
           onChange={handleChange}
-        //   onChange={(e) => setConfirmPassword(e.target.value)}
         />
       </div>
       <button className='career-btn' type='submit'>

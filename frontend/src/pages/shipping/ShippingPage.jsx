@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { saveShippingAddress } from '../../slices/cartSlice';
 import CheckoutSteps from '../../components/checkout/CheckoutSteps';
-import './shipping.css'
+import './shipping.css';
 
 const ShippingPage = () => {
   const cart = useSelector((state) => state.cart);
@@ -14,9 +14,8 @@ const ShippingPage = () => {
     city: shippingAddress.city || '',
     state: shippingAddress.state || '',
     postCode: shippingAddress.postCode || '',
-    country: shippingAddress.country || ''
+    country: shippingAddress.country || '',
   });
-
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -35,12 +34,11 @@ const ShippingPage = () => {
   return (
     <>
       <div className='reg'>
+        <CheckoutSteps step1 step2 />
         <form onSubmit={handleSubmit}>
-          <CheckoutSteps step1 step2 />
-          <br/>
           <h1>Shipping</h1>
           <div className='form-control'>
-            <label>Name</label>
+            <label>Name*</label>
             <input
               type='text'
               name='name'
@@ -51,7 +49,7 @@ const ShippingPage = () => {
             />
           </div>
           <div className='form-control'>
-            <label>Address</label>
+            <label>Address*</label>
             <input
               type='text'
               name='address'
@@ -73,9 +71,7 @@ const ShippingPage = () => {
             />
           </div>
           <div className='form-control'>
-            <label>
-              Post Code
-            </label>
+            <label>Post Code</label>
             <input
               type='text'
               name='postCode'
@@ -86,9 +82,7 @@ const ShippingPage = () => {
             />
           </div>
           <div className='form-control'>
-            <label>
-              State
-            </label>
+            <label>State</label>
             <input
               type='text'
               name='state'
@@ -99,9 +93,7 @@ const ShippingPage = () => {
             />
           </div>
           <div className='form-control'>
-            <label>
-              Country
-            </label>
+            <label>Country</label>
             <input
               type='text'
               name='country'

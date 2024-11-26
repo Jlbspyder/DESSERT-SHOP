@@ -18,7 +18,8 @@ const MyOrdersPage = () => {
     <div className='my-orders'>
       { isLoading ? (<Spinner />) : (
         <>
-          <table>
+        <h1>My Orders</h1>
+          <table id='crt'>
             <thead>
               <tr>
                 <th>ID</th>
@@ -32,19 +33,27 @@ const MyOrdersPage = () => {
             <tbody>
               {orders?.map((order) => (
                 <tr key={order._id}>
-                  <td>{order._id}</td>
-                  <td>{order.createdAt.substring(0, 10)}</td>
-                  <td>{order.totalPrice}</td>
                   <td>
-                    {order.paid ? (order.paidAt.substring(0, 10)) : (<FaTimes style={{color: 'red'}} />)}
+                   <span className='cell-header'>ID:</span> {order._id}
                   </td>
                   <td>
-                    {order.delivered ? (order.deliveredAt.substring(0, 10)) : (<FaTimes style={{color: 'red'}} />)}
+                    <span className='cell-header'>DATE:</span> {order.createdAt.substring(0, 10)}
                   </td>
                   <td>
-                    <Link to={`/order/${order._id}`}>
-                      <button className='confirm-order btn-straight check-details'>DETAILS</button>
-                    </Link>
+                  <span className='cell-header'>TOTAL:</span> {order.totalPrice}
+                  </td>
+                  <td>
+                  <span className='cell-header'>PAID:</span> {order.paid ? (order.paidAt.substring(0, 10)) : (<FaTimes style={{color: 'red'}} />)}
+                  </td>
+                  <td>
+                  <span className='cell-header'>DELIVERED:</span> {order.delivered ? (order.deliveredAt.substring(0, 10)) : (<FaTimes style={{color: 'red'}} />)}
+                  </td>
+                  <td>
+                    <div className="menu-buttons">
+                      <Link to={`/order/${order._id}`}>
+                        <button className='confirm-order btn-straight check-details'>DETAILS</button>
+                      </Link>
+                    </div>
                   </td>
                 </tr>
               ))}

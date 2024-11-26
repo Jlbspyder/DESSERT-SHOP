@@ -89,7 +89,7 @@ const OrderSummary = () => {
   const onApprove = (data, actions) => {
     return actions.order.capture().then(async function (details) {
       try {
-        await payForOrder({ orderId, details });
+        await payForOrder({ orderId, details }).unwrap();
         refetch();
         dispatch(clearCartItems());
         toast.success('Payment successful');
@@ -130,8 +130,8 @@ const OrderSummary = () => {
     <Spinner />
   ) : (
     <div className='your-cart summary_'>
+      <CheckoutSteps step1 step2 step3 step4 />
       <div className='confirm-page'>
-        <CheckoutSteps step1 step2 step3 step4 />
         <div id='info'>
           {!order.paid ? <h3>ORDER SUMMARY</h3> : <h3>ORDER COMPLETE</h3>}
         </div>
@@ -240,15 +240,6 @@ const OrderSummary = () => {
                 <Spinner />
               ) : (
                 <div>
-                  <div>
-                    <button
-                      type='button'
-                      className='confirm-order btn-straight'
-                      onClick={onApproveTest}
-                    >
-                      TEST PAY
-                    </button>
-                  </div>
                   <PayPalButtons
                     createOrder={createOrder}
                     onApprove={onApprove}

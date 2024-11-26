@@ -63,7 +63,7 @@ const MenuListPage = () => {
         <Spinner />
       ) : (
         <>
-          <table id='create'>
+          <table>
             <thead>
               <tr>
                 <th>ID</th>
@@ -73,15 +73,27 @@ const MenuListPage = () => {
                 <th></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id='crt'>
               {data.menu.map((menu) => (
                 <tr key={menu._id}>
-                  <td>{menu._id}</td>
-                  <td>{menu.name}</td>
-                  <td>{menu.category}</td>
-                  <td>{menu.price}</td>
                   <td>
-                    <div className='pp'>
+                    <span className='cell-header'>ID:</span>
+                    {menu._id}
+                  </td>
+                  <td>
+                    <span className='cell-header'>NAME:</span>
+                    {menu.name}
+                  </td>
+                  <td>
+                    <span className='cell-header'>CATEGORY:</span>{' '}
+                    {menu.category}
+                  </td>
+                  <td>
+                    <span className='cell-header'>PRICE:</span>
+                    {menu.price}
+                  </td>
+                  <td>
+                    <div className='menu-buttons'>
                       <Link to={`/admin/menu/${menu._id}/edit`}>
                         <button className='confirm-order btn-straight check-details'>
                           <FaEdit />

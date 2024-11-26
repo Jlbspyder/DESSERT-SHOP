@@ -4,9 +4,11 @@ const Timer = ({ duration }) => {
   const [timeLeft, setTimeLeft] = useState(duration);
 
   useEffect(() => {
-    setTimeout(() => {
-      setTimeLeft(timeLeft - 1000);
+   const timer = setTimeout(() => {
+     setTimeLeft(timeLeft - 1000);
     }, 1000);
+
+    return () => clearTimeout(timer)
   }, [timeLeft]);
 
   const getTime = (millisec) => {

@@ -1,5 +1,5 @@
 import './menupage.css';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Spinner from '../../components/Spinner';
 import MenuList from '../../components/MenuList';
 import { useSelector } from 'react-redux';
@@ -13,7 +13,7 @@ const MenuPage = () => {
 
   const { data, isLoading, error } = useGetMenuQuery({ pageNumber, keyword});
 
-  
+  const navigate = useNavigate();
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;

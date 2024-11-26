@@ -16,7 +16,7 @@ const OrderListPage = () => {
       {isLoading ? (
         <Spinner />
       ) : (
-        <table id='create'>
+        <table>
           <thead>
             <tr>
               <th>ID</th>
@@ -27,20 +27,30 @@ const OrderListPage = () => {
               <th></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id='crt'>
             {data.orders.map((order) => (
               <tr key={order._id}>
-                <td>{order._id}</td>
-                <td>{order.createdAt.substring(0, 10)}</td>
-                <td>${order.totalPrice.toFixed(2)}</td>
                 <td>
+                  <span className='cell-header'>ID:</span> {order._id}
+                </td>
+                <td>
+                  <span className='cell-header'>DATE:</span>{' '}
+                  {order.createdAt.substring(0, 10)}
+                </td>
+                <td>
+                  <span className='cell-header'>TOTAL:</span>$
+                  {order.totalPrice.toFixed(2)}
+                </td>
+                <td>
+                  <span className='cell-header'>PAID:</span>
                   {order.paid ? (
-                    <FaCheck style={{ color: 'hsl(159, 69%, 38%)' }}  />
+                    <FaCheck style={{ color: 'hsl(159, 69%, 38%)' }} />
                   ) : (
                     <FaTimes style={{ color: 'red' }} />
                   )}
                 </td>
                 <td>
+                  <span className='cell-header'>DELIVERED:</span>
                   {order.delivered ? (
                     order.deliveredAt.substring(11, 16)
                   ) : (
@@ -48,11 +58,13 @@ const OrderListPage = () => {
                   )}
                 </td>
                 <td>
-                  <Link to={`/order/${order._id}`}>
-                    <button className='confirm-order btn-straight check-details'>
-                      DETAILS
-                    </button>
-                  </Link>
+                  <div className='menu-buttons'>
+                    <Link to={`/order/${order._id}`}>
+                      <button className='confirm-order btn-straight check-details'>
+                        DETAILS
+                      </button>
+                    </Link>
+                  </div>
                 </td>
               </tr>
             ))}

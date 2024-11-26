@@ -1,5 +1,5 @@
 .menu-edit {
-  margin-top: 10px;
+  margin-top: 50px;
 }
 .menu-edit h1 {
   text-align: center;
@@ -34,7 +34,7 @@
 @media (min-width: 1025px) {
   .menu-edit {
     width: 80%;
-    margin: auto;
+    margin: 50px auto;
   }
   .edit-btn {
     margin-left: 20px;

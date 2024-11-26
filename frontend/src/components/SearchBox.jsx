@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 
 
 const SearchBox = () => {
   const navigate = useNavigate();
-  const [keyword, setKeyword] = useState('');
+  const { keyword: urlKeyword } = useParams();
+  const [keyword, setKeyword] = useState(urlKeyword || '');
 
   const submitHandler = (e) => {
     e.preventDefault();

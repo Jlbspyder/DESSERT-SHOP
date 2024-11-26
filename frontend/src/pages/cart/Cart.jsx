@@ -57,7 +57,7 @@ const Cart = () => {
           <div className="bill bill-info">
             <h3>ESTIMATED SHIPPING COSTS</h3>
             <h4>
-            $0.00
+            ${shippingPrice}
             </h4>
           </div>
           <div className="bill bill-info">
@@ -69,7 +69,7 @@ const Cart = () => {
           <div className="bill bill-info">
             <h3>ESTIMATED TOTAL</h3>
             <h4>
-              ${(totalPrice - shippingPrice).toFixed(2)}
+              ${(totalPrice - taxPrice).toFixed(2)}
             </h4>
           </div>
           <p id='tax'>Taxes and shipping calculated at checkout</p>

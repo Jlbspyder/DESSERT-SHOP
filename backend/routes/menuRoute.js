@@ -9,15 +9,16 @@ import {
   createMenuReview,
   getTopMenu,
 } from '../controllers/menuController.js';
+import checkObjectId from '../middleware/checkObjectId.js';
 import { protect, admin } from '../middleware/authMiddleware.js';
 
 router.route('/').get(getMenu).post(protect, admin, createMenu);
 router.get('/top', getTopMenu);
 router
   .route('/:id')
-  .get(getMenuById)
-  .put(protect, admin, updateMenu)
-  .delete(protect, admin, deleteMenu);
-router.route('/:id/reviews').post(protect, createMenuReview);
+  .get(checkObjectId, getMenuById)
+  .put(protect, admin, checkObjectId, updateMenu)
+  .delete(protect, admin, checkObjectId, deleteMenu);
+router.route('/:id/reviews').post(protect, checkObjectId, createMenuReview);
 
 export default router;

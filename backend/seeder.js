@@ -6,6 +6,7 @@ import { menu } from './data/menu.js'
 import User from './models/userModel.js'
 import Menu from './models/menuModel.js'
 import Order from './models/orderModel.js'
+import Address from "./models/addressModel.js";
 import connectDB from './config/db.js'
 
 dotenv.config()
@@ -14,9 +15,10 @@ connectDB()
 
 const importData = async () => {
     try {
-       await Order.deleteMany() 
-       await Menu.deleteMany() 
-       await User.deleteMany() 
+       await Order.deleteMany(); 
+       await Menu.deleteMany(); 
+       await User.deleteMany();
+       await Address.deleteMany(); 
 
        const createdUsers = await User.insertMany(users)
 
@@ -37,9 +39,10 @@ const importData = async () => {
 
 const destroyData = async () => {
     try {
-        await Order.deleteMany() 
-        await Menu.deleteMany() 
-        await User.deleteMany() 
+        await Order.deleteMany(); 
+        await Menu.deleteMany(); 
+        await User.deleteMany();
+        await Address.deleteMany(); 
 
         console.log('Data Destroyed!'.red.inverse)
         process.exit()

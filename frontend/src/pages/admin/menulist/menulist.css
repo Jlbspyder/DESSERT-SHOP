@@ -1,5 +1,5 @@
 .create-menu {
-  margin-top: 15px;
+  margin-top: 65px;
   padding-inline: 10px;
 }
 .add-menu {
@@ -10,35 +10,37 @@
 .edt {
   width: 20%;
 }
-#create {
-  margin: 10px 0 20px 0;
-}
-.pp {
+.menu-buttons {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 @media (min-width:600px) {
   .edt {
-    width: 13%;
+    width: 14%;
   }
-  .pp {
+  table {
+    width: 80%;
+  }
+  .menu-buttons {
     display: flex;
     flex-direction: row;
     justify-content: end;
     gap: 10px;
   }
-}
-
-@media (min-width: 1025px) {
-  #create {
-    width: 80%;
-    margin: 20px auto;
-  }
   .add-menu {
     display: flex;
     justify-content: space-between;
     width: 80%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1025px) {
+  .add-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
     margin: auto;
   }
   .edt {

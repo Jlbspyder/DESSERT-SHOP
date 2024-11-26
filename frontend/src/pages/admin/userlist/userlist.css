@@ -1,13 +1,51 @@
 .userlist {
- margin-top: 30px;
+  margin: 70px auto 50px auto;
+  width: 90%;
 }
 .userlist h1 {
-    text-align: center;
-    margin-top: 15px;
+  text-align: center;
+  margin-top: 15px;
 }
-@media (min-width: 600px) {
-    .userlist {
-        width: 95%;
-        margin: 30px auto;
-    }
+th {
+  display: none;
+}
+.cell-header {
+  display: block;
+  font-style: normal;
+  color: var(--Red);
+  font-weight: 600;
+}
+td {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 20px;
+  font-size: 18px;
+  border: none;
+  margin-bottom: 5px;
+}
+tr:nth-child(even) {
+  background: var(--Offwhite);
+  border: 1px solid var(--Beige);
+}
+tr:nth-child(odd) {
+  background: var(--White);
+  border: 1px solid var(--Beige);
+}
+@media (min-width: 1000px) {
+  .userlist {
+    width: 100%;
+  }
+  table {
+    width: 95%;
+  }
+  .cell-header {
+    display: none;
+  }
+  tr, td, th {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 50px;
+  }
 }

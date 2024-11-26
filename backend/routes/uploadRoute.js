@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
   },
 });
 
-function checkFileType(file, cb) {
+function fileFilter (req, file, cb) {
   const filetypes = /jpg|jpeg|png/;
   const extname = filetypes.test(
     path.extname(file.originalname).toLocaleLowerCase()
@@ -26,17 +26,32 @@ function checkFileType(file, cb) {
   } else {
     cb('Images only!');
   }
+  // const filetypes = /jpe?g|png|webp/;
+  // const mimetypes = /images\jpe?g|image\/png|image\/webp/;
+ 
+  // const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+  // const mimetype = mimetypes.test(file.mimetype);
+ 
+  // if (extname && mimetype) {
+  //  cb(null, true)
+  // } else {
+  //  cb(new Error('Images only!'), false)
+  // }
 }
 
-const upload = multer({
-    storage
-})
+const upload = multer({  storage, fileFilter })
+const uploadSingleImage = upload.single('image');
 
-router.post('/', upload.single('image'), (req, res) => {
-    res.send({
-        message: 'Image Uploaded',
-        image: `/${req.file.path}`
-    })
-})
+router.post('/', (req, res) => {
+ uploadSingleImage(req, res, function (error) {
+  if (error) {
+    res.status(400).send({ message: error.message });
+  }
+  res.status(200).send({
+    message: 'Image uploaded',
+    image: `/${req.file.path}`
+  });
+ });
+});
 
 export default router;

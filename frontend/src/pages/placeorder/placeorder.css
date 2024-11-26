@@ -1,8 +1,9 @@
 .place-order {
   margin-top: 1rem;
+  padding-inline: 10px;
 }
 .order {
-  margin: 30px 30px;
+  margin: 80px 10px 20px 10px;
   padding-bottom: 10px;
 }
 .order-dets {
@@ -10,17 +11,17 @@
   justify-content: start;
   align-items: center;
   gap: 20px;
-  height: 200px;
+  min-height: 180px;
   border: 1px solid var(--White);
 }
 .order-dets img {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 140px;
 }
 #arrival {
   margin: 10px 0;
   padding: 10px;
-  height: 50px;
+  min-height: 50px;
   background: var(--White);
   color: var(--Green);
 }
@@ -102,6 +103,9 @@
     text-decoration: underline;
 }
 @media (min-width: 600px) {
+  .order {
+    margin: 80px 30px 20px 30px;
+  }
   .place-order-description {
     display: flex;
     justify-content: space-between;
@@ -119,6 +123,9 @@
     display: flex;
     flex-direction: row-reverse;
     gap: 2rem;
+  }
+  .order h2 {
+    margin-left: 30px;
   }
   .place-order-info1 {
     width: 40%;

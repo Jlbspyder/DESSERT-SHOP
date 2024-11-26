@@ -1,6 +1,9 @@
 .summary {
   border: 1px solid rgb(230, 217, 217);
 }
+.summary_ {
+  margin-top: 70px;
+}
 .confirm-page-summary {
   display: flex;
   gap: 5px;
@@ -44,8 +47,9 @@
 }
 .order-detail {
   border: 1px solid rgb(230, 217, 217);
-  padding: 10px;
+  padding: 5px;
   margin-top: 10px;
+  font-size: 12px;
 }
 #not-paid,
 #not-delivered {
@@ -83,18 +87,24 @@
   }
   .summary_ {
     max-width: 700px;
-    margin: 90px auto 50px auto;
+    margin: 70px auto 50px auto;
+  }
+  .order-detail {
+    font-size: 16px;
   }
 }
 @media (min-width: 1000px) {
   .summary_ {
     max-width: 700px;
-    margin: 90px auto 50px auto;
+    margin: 70px auto 50px auto;
   }
   .sumary-info {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+  .order-detail {
+    font-size: 16px;
   }
 }
 

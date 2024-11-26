@@ -1,39 +1,51 @@
 import asynchandler from '../middleware/asyncHandler.js';
 import Order from '../models/orderModel.js';
+import Menu from '../models/menuModel.js'
+import { calculatePrices } from '../utilities/CalculatePrices.js'
+import { verifyPayPalpayment, checkIfNewTransaction } from '../utilities/paypal.js';
 
 //Create new order
 //POST /api/orders
 //Private access
 const addOrders = asynchandler(async (req, res) => {
-  const {
-    orderItems,
-    shippingAddress,
-    paymentMethod,
-    itemPrice,
-    taxPrice,
-    shippingPrice,
-    totalPrice,
-  } = req.body;
+  const {  orderItems, shippingAddress, paymentMethod } = req.body;
 
   if (orderItems && orderItems.length === 0) {
     res.status(400);
     throw new Error('No order items');
   } else {
-    const order = new Order({
-      orderItems: orderItems.map((item) => ({
-        ...item,
-        menu: item._id,
-        _id: undefined,
-      })),
+    // get the ordered items from the database
+    const itemsFromDatabase = await Menu.find({
+      _id: { $in: orderItems.map((x) => x._id) }
+    });
+
+    // map over the order items and use the price from items from the database
+    const databaseOrderItems = orderItems.map((itemFromClient) => {
+      const matchingItemFromDatabase = itemsFromDatabase.find(
+        (itemFromDatabase) => itemFromDatabase._id.toString() === itemFromClient._id
+      );
+      return {
+        ...itemFromClient,
+        menu: itemFromClient._id,
+        price: matchingItemFromDatabase.price,
+        _id: undefined
+      }
+    })
+    // claculate prices
+    const { itemPrice, taxPrice, shippingPrice, totalPrice } = calculatePrices(databaseOrderItems);
+
+    const order = new Order ({
+      orderItems: databaseOrderItems,
       user: req.user._id,
       shippingAddress,
       paymentMethod,
       itemPrice,
-      taxPrice,
       shippingPrice,
-      totalPrice,
-    });
+      taxPrice,
+      totalPrice
+    })
     const createOrder = await order.save();
+
     res.status(201).json(createOrder);
   }
 });
@@ -64,9 +76,20 @@ const getOrderById = asynchandler(async (req, res) => {
 //PUT /api/orders/:id/pay
 //Private access
 const updateOrderToPaid = asynchandler(async (req, res) => {
-  const order = await Order.findById(req.params.id);
+  const { verified, value } = await verifyPayPalpayment(req.body.id);
+  if (!verified) throw new Error('Payment not verified');
 
+  //check if this transaction has been done before
+  const isNewTransaction = await checkIfNewTransaction(Order, req.body.id);
+  if(!isNewTransaction) throw new Error('Transaction has been done before');
+
+  const order = await Order.findById(req.params.id);
+  
   if (order) {
+    //check to see if correct amount was paid
+    const paidCorrectAmount = order.totalPrice.toString() === value;
+    if (!paidCorrectAmount) throw new Error('Incorrect amount paid');
+
     order.paid = true;
     order.paidAt = Date.now();
     order.paymentResult = {
@@ -75,10 +98,9 @@ const updateOrderToPaid = asynchandler(async (req, res) => {
       update_time: req.body.update_time,
       email_address: req.body.payer.email_address
     }
+    const updateOrder = await order.save();
 
-    const updatedOrder = await order.save();
-
-    res.status(200).json(updatedOrder);
+    res.json(updateOrder);
   } else {
     res.status(404);
     throw new Error('Order not found')
@@ -116,9 +138,6 @@ const getOrders = asynchandler(async (req, res) => {
     .limit(pageSize)
     .skip(pageSize * (page - 1));
     res.json({ orders, page, pages: Math.ceil(count / pageSize) });
-
-  // const orders = await Order.find({}).populate('user', 'id name');
-  // res.status(200).json(orders);
 });
 
 export {

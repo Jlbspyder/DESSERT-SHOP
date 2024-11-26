@@ -18,14 +18,12 @@ const ResturantPage = () => {
   const [word, setWord] = useState('');
 
 
-  const { pageNumber, keyword, id } = useParams();
+  const { pageNumber, keyword } = useParams();
   const {
     data,
     isLoading,
   } = useGetAddressQuery({ pageNumber, keyword });
 
-
-  // const { data: addy, refetch } = useGetAddressDetailsQuery(id);
 
   const position = { lat: 6.52, lng: 3.37 };
 
