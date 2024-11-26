@@ -1,6 +1,5 @@
   .reg {
-    /* max-width: 500px; */
-    margin: auto;
+    margin: 55px auto 0 auto;
     padding-inline: 1rem;
     background: inherit;
     display: flex;

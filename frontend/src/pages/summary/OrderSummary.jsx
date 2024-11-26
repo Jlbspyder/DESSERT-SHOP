@@ -24,7 +24,8 @@ const OrderSummary = () => {
     error,
   } = useGetOrderDetailsQuery(orderId);
 
-  const [deliverOrder, { isLoading: loadingDeliver }] = useDeliveredOrderMutation();
+  const [deliverOrder, { isLoading: loadingDeliver }] =
+    useDeliveredOrderMutation();
 
   const dispatch = useDispatch();
 
@@ -79,11 +80,11 @@ const OrderSummary = () => {
     try {
       await deliverOrder(orderId);
       refetch();
-      toast.success('Order Delivered')
+      toast.success('Order Delivered');
     } catch (error) {
-      toast.error(error?.data?.message || error.message)
+      toast.error(error?.data?.message || error.message);
     }
-  }
+  };
 
   const onApprove = (data, actions) => {
     return actions.order.capture().then(async function (details) {
@@ -129,16 +130,17 @@ const OrderSummary = () => {
     <Spinner />
   ) : (
     <div className='your-cart summary_'>
-      <CheckoutSteps step1 step2 step3 step4 />
       <div className='confirm-page'>
+        <CheckoutSteps step1 step2 step3 step4 />
         <div id='info'>
           {!order.paid ? <h3>ORDER SUMMARY</h3> : <h3>ORDER COMPLETE</h3>}
         </div>
         {order.paid && (
           <p>
-            Thank you <strong>{order.user.name.toUpperCase()}</strong> for your order! We are
-            preparing your desserts. We hope you enjoy your meal. An email has been 
-            sent to <strong>{order.user.email}</strong> with details of your order.
+            Thank you <strong>{order.user.name.toUpperCase()}</strong> for your
+            order! We are preparing your desserts. We hope you enjoy your meal.
+            An email has been sent to <strong>{order.user.email}</strong> with
+            details of your order.
           </p>
         )}
         {order.paid && (
@@ -190,7 +192,9 @@ const OrderSummary = () => {
         </div>
         <br />
         {order.delivered ? (
-          <p id='delivered'>Delivered on {order.deliveredAt.substring(0, 10)}</p>
+          <p id='delivered'>
+            Delivered on {order.deliveredAt.substring(0, 10)}
+          </p>
         ) : (
           <p id='not-delivered'>Not Delivered</p>
         )}

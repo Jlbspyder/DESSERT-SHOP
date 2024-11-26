@@ -34,9 +34,10 @@ const ShippingPage = () => {
 
   return (
     <>
-      <CheckoutSteps step1 step2 />
       <div className='reg'>
         <form onSubmit={handleSubmit}>
+          <CheckoutSteps step1 step2 />
+          <br/>
           <h1>Shipping</h1>
           <div className='form-control'>
             <label>Name</label>
