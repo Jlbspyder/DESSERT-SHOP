@@ -41,6 +41,9 @@ import MenuListPage from './pages/admin/menulist/MenuListPage.jsx';
 import MenuEditPage from './pages/admin/menuedit/MenuEditPage.jsx';
 import UserListPage from './pages/admin/userlist/UserListPage.jsx';
 import UserEditPage from './pages/admin/useredit/UserEditPage.jsx';
+import MyDetailsPage from './pages/mydetails/MyDetailsPage.jsx';
+import AddressBook from './pages/address/AddressBook.jsx';
+import ContactPage from './pages/contact/ContactPage.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -75,6 +78,9 @@ const router = createBrowserRouter(
         <Route path='/order/:id' element={<OrderSummary />} />
         <Route path='/profile' element={<ProfilePage />} />
         <Route path='/myorders' element={<MyOrdersPage />} />
+        <Route path='/mydetails' element={<MyDetailsPage />} />
+        <Route path='/address' element={<AddressBook /> } />
+        <Route path='/contact' element={<ContactPage /> } />
       </Route>
 
       <Route path='' element={<AdminRoute />}>

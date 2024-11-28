@@ -1,0 +1,45 @@
+.contact-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    border-top: 5px solid var(--Beige);
+}
+.contact-flex button {
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+    background: rgb(223, 214, 214);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+.no-border {
+    border-top: 1px solid var(--white);
+    border-bottom: 1px solid var(--White);
+    height: 50px;
+}
+.contact-flex h5 {
+    margin-bottom: 10px;
+}
+.discount {
+    font-size: 70px;
+}
+.preference {
+    padding: 10px 10px 20px 10px;
+    text-align: center;
+    background: var(--White);
+}
+.preference p {
+    margin: 10px 0 20px 0;
+}
+.ques {
+    font-size: 20px;
+}
+@media (min-width: 1000px) {
+    .contact__ {
+        max-width: 60%;
+        margin-inline: auto;
+        border: 1px solid var(--White);
+    }
+}

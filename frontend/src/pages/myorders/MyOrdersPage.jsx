@@ -13,12 +13,12 @@ const MyOrdersPage = () => {
   const { data: orders, isLoading, error } = useGetMyOrdersQuery();
 
 
-
   return (
     <div className='my-orders'>
       { isLoading ? (<Spinner />) : (
         <>
         <h1>My Orders</h1>
+        {orders?.length === 0 ? (<span>You haven't placed any order</span>) : (<>
           <table id='crt'>
             <thead>
               <tr>
@@ -46,7 +46,7 @@ const MyOrdersPage = () => {
                   <span className='cell-header'>PAID:</span> {order.paid ? (order.paidAt.substring(0, 10)) : (<FaTimes style={{color: 'red'}} />)}
                   </td>
                   <td>
-                  <span className='cell-header'>DELIVERED:</span> {order.delivered ? (order.deliveredAt.substring(0, 10)) : (<FaTimes style={{color: 'red'}} />)}
+                  <span className='cell-header'>D:</span> {order.delivered ? (order.deliveredAt.substring(0, 10)) : (<FaTimes style={{color: 'red'}} />)}
                   </td>
                   <td>
                     <div className="menu-buttons">
@@ -59,6 +59,9 @@ const MyOrdersPage = () => {
               ))}
             </tbody>
           </table>
+        </>)}
+
+         
         </>
       )}
     </div>

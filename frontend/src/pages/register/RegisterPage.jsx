@@ -8,10 +8,12 @@ import './registerpage.css';
 
 const RegisterPage = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    firstname: '',
+    lastname: '',
     email: '',
     password: '',
     confirmPassword: '',
+    // dob: ''
   });
 
   const handleChange = (e) => {
@@ -56,12 +58,22 @@ const RegisterPage = () => {
       <form onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
         <div className='form-control'>
-          <label>Name*</label>
+          <label>First Name*</label>
           <input
             type='text'
-            name='name'
+            name='firstname'
             required
-            value={formData.name}
+            value={formData.firstname}
+            onChange={handleChange}
+          />
+        </div>
+        <div className='form-control'>
+          <label>Last Name*</label>
+          <input
+            type='text'
+            name='lastname'
+            required
+            value={formData.lastname}
             onChange={handleChange}
           />
         </div>
@@ -95,6 +107,16 @@ const RegisterPage = () => {
             onChange={handleChange}
           />
         </div>
+        {/* <div className='form-control'>
+          <label>Date of Birth*</label>
+          <input
+            type='date'
+            name='dob'
+            required
+            value={formData.dob}
+            onChange={handleChange}
+          />
+        </div> */}
         <button className='login-btn' type='submit'>
           Sign Up
         </button>

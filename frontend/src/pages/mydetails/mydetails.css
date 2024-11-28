@@ -1,0 +1,35 @@
+.my-details {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 70px;
+  padding: 10px;
+  min-height: 400px;
+}
+.back {
+    position: absolute;
+    color: var(--Red);
+    top: 20px;
+    left: 10px;
+    font-size: 30px;
+}
+.my-details h2 {
+    color: var(--Red);
+    height: 60px;
+    text-align: center;
+    border-bottom: 5px solid var(--Beige);
+}
+.dets {
+  border-bottom: 1px solid var(--Beige);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}

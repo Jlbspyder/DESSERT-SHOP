@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useGetMyOrdersQuery } from '../../slices/ordersApiSlice';
 import { toast } from 'react-toastify';
+import { IoIosArrowBack } from 'react-icons/io';
 import {
   useLogoutMutation,
   useProfileMutation,
@@ -13,7 +14,8 @@ import Spinner from "../../components/Spinner";
 
 const ChangePassword = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    firstname: '',
+    lastname: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -45,7 +47,8 @@ const ChangePassword = () => {
     if (userInfo) {
       setFormData((prevFormData) => ({
           ...prevFormData,
-          name: userInfo.name,
+          firstname: userInfo.firstname,
+          lastname: userInfo.lastname,
           email: userInfo.email,
       }));
     }
@@ -59,7 +62,8 @@ const ChangePassword = () => {
     } else {
       try {
         const res = await updateProfile({
-          name: formData.name,
+          firstname: formData.firstname,
+          lastname: formData.lastname,
           email: formData.email,
           password: formData.password,
           _id: userInfo._id,
@@ -74,14 +78,32 @@ const ChangePassword = () => {
 
 
   return (
+  <>
+        <div className="password">
+          <Link to='/profile'>
+            <IoIosArrowBack className='pw-back' />
+          </Link>
+          <h2>MY DETAILS</h2>
+        </div>
     <form onSubmit={submitHandler} className='update-acct'>
       <div className='form-control'>
-        <label>Name</label>
+        <label>First Name</label>
         <input
           type='text'
-          name='name'
-          placeholder='Enter Name'
-          value={formData.name}
+          name='firstname'
+          placeholder='Enter First Name'
+          value={formData.firstname}
+          required
+          onChange={handleChange}
+        />
+      </div>
+      <div className='form-control'>
+        <label>Last Name</label>
+        <input
+          type='text'
+          name='lastname'
+          placeholder='Enter Last Name'
+          value={formData.lastname}
           required
           onChange={handleChange}
         />
@@ -124,6 +146,7 @@ const ChangePassword = () => {
       </button>
             {loadingProfileUpdate && <Spinner />}
     </form>
+  </>
   );
 };
 

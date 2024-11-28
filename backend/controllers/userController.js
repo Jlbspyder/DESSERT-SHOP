@@ -15,8 +15,10 @@ const loginUser = asynchandler(async (req, res) => {
 
     res.status(200).json({
         _id: user._id,
-        name: user.name,
+        firstname: user.firstname,
+        lastname: user.lastname,
         email: user.email,
+        // dob: user.dob,
         isAdmin: user.isAdmin
     })
   } else {
@@ -29,7 +31,7 @@ const loginUser = asynchandler(async (req, res) => {
 //GET /api/users
 //Public access
 const regUser = asynchandler(async (req, res) => {
-  const { name, email, password } = req.body;
+  const { firstname, lastname, email, password } = req.body;
 
   const userExists = await User.findOne({ email });
 
@@ -38,16 +40,20 @@ const regUser = asynchandler(async (req, res) => {
     throw new Error('User already exists');
   } 
   const user = await User.create({
-    name,
+    firstname,
+    lastname,
     email,
-    password
+    // dob,
+    password,
   })
   if (user) {
     generateToken(res, user._id)
     res.status(201).json({
       _id: user._id,
-      name: user.name,
+      firstname: user.firstname,
+      lastname: user.lastname,
       email: user.email,
+      // dob: user.dob,
       isAdmin: user.isAdmin
     })
   } else {
@@ -76,8 +82,10 @@ const getUserProfile = asynchandler(async (req, res) => {
   if (user) {
     res.status(200).json({
       _id: user._id,
-      name: user.name,
+      firstname: user.firstname,
+      lastname: user.lastname,
       email: user.email,
+      // dob: user.dob,
       isAdmin: user.isAdmin
     })
   } else {
@@ -93,8 +101,10 @@ const updateUserProfile = asynchandler(async (req, res) => {
   const user = await User.findById(req.user._id);
 
   if (user) {
-    user.name = req.body.name || user.name
+    user.firstname = req.body.firstname || user.firstname
+    user.lastname = req.body.lastname || user.lastname
     user.email = req.body.email || user.email
+    // user.dob = req.body.dob || user.dob
 
     if (req.body.password) {
       user.password = req.body.password
@@ -103,8 +113,10 @@ const updateUserProfile = asynchandler(async (req, res) => {
 
     res.status(200).json({
       _id: updatedUser._id,
-      name: updatedUser.name,
+      firstname: updatedUser.firstname,
+      lastname: updatedUser.lastname,
       email: updatedUser.email,
+      // dob: updatedUser.dob,
       isAdmin: updatedUser.isAdmin
     })
   } else {
@@ -161,16 +173,20 @@ const updateUser = asynchandler(async (req, res) => {
   const user = await User.findById(req.params.id);
 
   if (user) {
-    user.name = req.body.name || user.name;
+    user.firstname = req.body.firstname || user.firstname;
+    user.lastname = req.body.lastname || user.lastname;
     user.email = req.body.email || user.email;
+    // user.dob = req.body.dob || user.dob
     user.isAdmin = Boolean(req.body.isAdmin || user.isAdmin);
 
     const updatedUser = await user.save();
 
     res.status(200).json({
       _id: updatedUser._id,
-      name: updatedUser.name,
+      firstname: updatedUser.firstname,
+      lastname: updatedUser.lastname,
       email: updatedUser.email,
+      // dob: updatedUser.dob,
       isAdmin: updatedUser.isAdmin
     })
   } else {

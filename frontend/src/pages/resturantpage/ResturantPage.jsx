@@ -17,10 +17,11 @@ const ResturantPage = () => {
   const [open, setOpen] = useState(false);
   const [word, setWord] = useState('');
 
-
   const { pageNumber, keyword } = useParams();
-  const { data, isLoading, error } = useGetAddressQuery({ pageNumber, keyword });
-
+  const { data, isLoading, error } = useGetAddressQuery({
+    pageNumber,
+    keyword,
+  });
 
   const position = { lat: 6.52, lng: 3.37 };
 
@@ -30,7 +31,7 @@ const ResturantPage = () => {
     e.preventDefault();
     if (word.trim()) {
       navigate(`/resturant/search/${word}`);
-      setWord('')
+      setWord('');
     } else {
       navigate('/');
     }
@@ -63,13 +64,18 @@ const ResturantPage = () => {
                   value={word}
                   onChange={(e) => setWord(e.target.value)}
                 />
-                  <FaLocationArrow onClick={submitHandler} className='search-icon' />
+                <FaLocationArrow
+                  onClick={submitHandler}
+                  className='search-icon'
+                />
               </div>
             </form>
             <h1>Resturants</h1>
             {isLoading ? (
               <Spinner />
-            ) : error ? (<h3>{error?.data.message || error.error}</h3>) : (
+            ) : error ? (
+              <h3>{error?.data.message || error.error}</h3>
+            ) : (
               <div className='resturant-locations'>
                 {data?.address.map((location) => (
                   <div key={location._id} className='addresses'>
@@ -80,14 +86,14 @@ const ResturantPage = () => {
                     </span>
                   </div>
                 ))}
+                <PaginateAddress
+                  pages={data?.pages}
+                  page={data?.page}
+                  keyword={keyword ? keyword : ''}
+                />
               </div>
             )}
           </div>
-          <PaginateAddress
-            pages={data?.pages}
-            page={data?.page}
-            keyword={keyword ? keyword : ''}
-          />
           <APIProvider apiKey={import.meta.env.REACT_APP_MAP_KEY}>
             <div className='map'>
               <Map zoom={9} center={position} mapId='b532c0b0dff4db16'>

@@ -132,7 +132,7 @@ const Header = () => {
         <div className='profile-menu'>
           {userInfo && !userInfo.isAdmin ? (
             <small id='logo' onClick={handleOpenProfile}>
-              Hi {userInfo.name.toUpperCase()}
+              Hi {userInfo.firstname.toUpperCase()}
             </small>
           ) : userInfo ? (
             ''
@@ -144,7 +144,7 @@ const Header = () => {
           )}
           {userInfo && userInfo.isAdmin && (
             <small id='logo' onClick={handleOpenProfile}>
-              Hi {userInfo.name.toUpperCase()}
+              Hi {userInfo.firstname.toUpperCase()}
             </small>
           )}
           <div className='shopping'>
@@ -191,16 +191,6 @@ const Header = () => {
               <p>My Account</p>
             </Link>
           )}
-          {userInfo && !userInfo.isAdmin && (
-            <Link
-              to='/profile'
-              className='account-profile'
-              onClick={handleCloseProfile}
-            >
-              <RiShoppingBagFill className='account-profile-icon' />
-              <p>My Orders</p>
-            </Link>
-          )}
           {userInfo && userInfo.isAdmin && (
             <Link
               to='/admin/userlist'
@@ -229,16 +219,6 @@ const Header = () => {
             >
               <RiShoppingBagFill className='account-profile-icon' />
               <p>Orders</p>
-            </Link>
-          )}
-          {userInfo && !userInfo.isAdmin && (
-            <Link
-              to='/profile'
-              className='account-profile'
-              onClick={handleCloseProfile}
-            >
-              <BsChatDots className='account-profile-icon' />
-              <p>Contact</p>
             </Link>
           )}
         </div>

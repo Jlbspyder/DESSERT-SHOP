@@ -67,7 +67,7 @@ const Profile = () => {
                 <h3>Gift cards and vouchers</h3>
               </div>
             </Link>
-            <Link className='profileMenu'>
+            <Link to={'/mydetails'} className='profileMenu'>
               <div>
                 <MdOutlineSwitchAccount className='account-profile-icon' />
               </div>
@@ -83,7 +83,7 @@ const Profile = () => {
                 <h3>Change password</h3>
               </div>
             </Link>
-            <Link className='profileMenu'>
+            <Link to={'/address'} className='profileMenu'>
               <div>
                 <FaHouseUser className='account-profile-icon' />
               </div>
@@ -99,12 +99,12 @@ const Profile = () => {
                 <h3>Payment methods</h3>
               </div>
             </Link>
-            <Link className='profileMenu'>
+            <Link to={'/contact'} className='profileMenu'>
               <div>
                 <BsChatDots className='account-profile-icon' />
               </div>
               <div>
-                <h3>Contact preferences</h3>
+                <h3>Contact Preferences</h3>
               </div>
             </Link>
             <Link className='profileMenu'>
@@ -135,7 +135,7 @@ const Profile = () => {
               </div>
               <br/>
               <div className='welcome-bottom'>
-                <h1>{userInfo.name}</h1>
+                <h1>{userInfo.firstname}</h1>
               </div>
             </div>
             <img
