@@ -15,7 +15,7 @@ export const addressApiSlice = apiSlice.injectEndpoints({
             keepUnusedDataFor: 5
         }),
         getAddressDetails: builder.query({
-            query: ({addressId}) => ({
+            query: (addressId) => ({
               url: `${ADDRESS_URL}/${addressId}`,
             }),
             keepUnusedDataFor: 5,

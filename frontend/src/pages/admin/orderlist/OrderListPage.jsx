@@ -15,20 +15,20 @@ const OrderListPage = () => {
       <h1>Orders</h1>
       {isLoading ? (
         <Spinner />
-      ) : (
+      ) : error ? (<h3>{error && 'No orders to display'}</h3>) : (
         <table>
           <thead>
             <tr>
               <th>ID</th>
               <th>DATE</th>
-              <th>TOTAL</th>
+              <th>AMOUNT</th>
               <th>PAID</th>
               <th>DELIVERED</th>
               <th></th>
             </tr>
           </thead>
           <tbody id='crt'>
-            {data.orders.map((order) => (
+            {data.orders.map((order, arr) => (
               <tr key={order._id}>
                 <td>
                   <span className='cell-header'>ID:</span> {order._id}
@@ -38,7 +38,7 @@ const OrderListPage = () => {
                   {order.createdAt.substring(0, 10)}
                 </td>
                 <td>
-                  <span className='cell-header'>TOTAL:</span>$
+                  <span className='cell-header'>AMOUNT:</span>$
                   {order.totalPrice.toFixed(2)}
                 </td>
                 <td>
@@ -52,10 +52,10 @@ const OrderListPage = () => {
                 <td>
                   <span className='cell-header'>DELIVERED:</span>
                   {order.delivered ? (
-                    order.deliveredAt.substring(11, 16)
+                    order.deliveredAt.substring(11, 16) 
                   ) : (
                     <FaTimes style={{ color: 'red' }} />
-                  )}
+                  )}{order.delivered && ' GMT'}
                 </td>
                 <td>
                   <div className='menu-buttons'>

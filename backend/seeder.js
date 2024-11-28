@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
-import users from './data/users.js'
+import users  from './data/users.js'
+import address from "./data/address.js";
 import colors from 'colors'
 import { menu } from './data/menu.js'
 import User from './models/userModel.js'
@@ -20,15 +21,24 @@ const importData = async () => {
        await User.deleteMany();
        await Address.deleteMany(); 
 
-       const createdUsers = await User.insertMany(users)
-
+       const createdUsers = await User.insertMany(users);
        const adminUser = createdUsers[0]._id
+       
  
        const sampleMenu = menu.map((men) => {
         return { ... men, user: adminUser}
        })
 
        await Menu.insertMany(sampleMenu)
+
+       
+       const createdAddy = address.map((addy) => {
+        return { ...addy, user: adminUser}
+       });
+       
+       await Address.insertMany(createdAddy);
+       
+
        console.log('Data Imported'.green.inverse)
        process.exit()
     } catch (error) {

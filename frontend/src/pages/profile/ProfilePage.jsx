@@ -21,7 +21,8 @@ import { logout, setCredentials } from '../../slices/authSlice';
 import './profile.css';
 
 const Profile = () => {
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [signout] = useLogoutMutation();
 
   const { userInfo } = useSelector((state) => state.auth);

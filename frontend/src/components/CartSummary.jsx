@@ -25,7 +25,7 @@ const CartSummary = ({item, quantity, name, price, thumbnail  }) => {
           <h5>
             {quantity}x
             <span>
-              &nbsp; &nbsp;@${price} &nbsp; &nbsp; $
+              &nbsp; &nbsp;@${price.toFixed(2)} &nbsp; &nbsp; $
               {Number.parseFloat(price * quantity).toFixed(2)}
             </span>
           </h5>

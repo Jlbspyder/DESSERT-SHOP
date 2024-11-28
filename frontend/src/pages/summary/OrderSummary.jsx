@@ -15,7 +15,6 @@ import { useDeliveredOrderMutation } from '../../slices/ordersApiSlice';
 import './ordersummary.css';
 
 const OrderSummary = () => {
-  const [startTimer, setStartTimer] = useState(false);
   const { id: orderId } = useParams();
   const {
     data: order,
@@ -23,6 +22,7 @@ const OrderSummary = () => {
     isLoading,
     error,
   } = useGetOrderDetailsQuery(orderId);
+
 
   const [deliverOrder, { isLoading: loadingDeliver }] =
     useDeliveredOrderMutation();
@@ -70,11 +70,6 @@ const OrderSummary = () => {
     }
   }, [order, paypal, paypalDispatch, loadingPayPal, errorPayPal]);
 
-  useEffect(() => {
-    if (order && order.paid) {
-      setStartTimer(true);
-    }
-  }, [order]);
 
   const deliverOrderHandler = async () => {
     try {
@@ -91,26 +86,27 @@ const OrderSummary = () => {
       try {
         await payForOrder({ orderId, details }).unwrap();
         refetch();
-        dispatch(clearCartItems());
         toast.success('Payment successful');
+        dispatch(clearCartItems());
       } catch (error) {
         toast.error(error?.data?.message || error.message);
       }
     });
   };
 
-  const onApproveTest = async () => {
-    await payForOrder({ orderId, details: { payer: {} } });
-    refetch();
-    dispatch(clearCartItems());
-    toast.success('Payment successful');
-  };
+  // const onApproveTest = async () => {
+  //   await payForOrder({ orderId, details: { payer: {} } });
+  //   refetch();
+  //   dispatch(clearCartItems());
+  //   toast.success('Payment successful');
+  // };
 
   const onError = (error) => {
     toast.error(error.message);
   };
 
   const createOrder = (data, actions) => {
+
     return actions.order
       .create({
         purchase_units: [
@@ -135,7 +131,7 @@ const OrderSummary = () => {
         <div id='info'>
           {!order.paid ? <h3>ORDER SUMMARY</h3> : <h3>ORDER COMPLETE</h3>}
         </div>
-        {order.paid && (
+        {order.paid && !order.delivered && (
           <p>
             Thank you <strong>{order.user.name.toUpperCase()}</strong> for your
             order! We are preparing your desserts. We hope you enjoy your meal.
@@ -143,6 +139,10 @@ const OrderSummary = () => {
             details of your order.
           </p>
         )}
+        {order.paid && order.delivered && <p>
+        Thank you <strong>{order.user.name.toUpperCase()}</strong> for your
+        order! We hope you enjoyed your meal.
+      </p>}
         {order.paid && (
           <div className='order-detail'>
             <div className='bill'>
@@ -193,7 +193,7 @@ const OrderSummary = () => {
         <br />
         {order.delivered ? (
           <p id='delivered'>
-            Delivered on {order.deliveredAt.substring(0, 10)}
+            Delivered at {order.deliveredAt.substring(11, 19)} GMT
           </p>
         ) : (
           <p id='not-delivered'>Not Delivered</p>

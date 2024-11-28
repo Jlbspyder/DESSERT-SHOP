@@ -22,7 +22,7 @@ async function getPayPalAccessToken() {
     headers,
     body,
   });
-  if (!response.ok) throw Error('Failed to get  access token');
+  if (!response.ok) throw new Error('Failed to get  access token');
 
   const paypalData = await response.json();
 
@@ -52,12 +52,12 @@ export async function verifyPayPalpayment(paypalTransactionId) {
     {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${accessToken}`,
+        Authorization: `Bearer ${accessToken}`, 
       },
     }
   );
   if (!paypalResponse.ok) throw new Error('Failed to verify payment');
-
+  
   const paypalData = await paypalResponse.json();
   return {
     verified: paypalData.status === 'COMPLETED',

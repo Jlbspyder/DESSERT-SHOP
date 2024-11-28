@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux';
 import SearchBox from '../SearchBox';
 import { useLogoutMutation } from '../../slices/usersApiSlice';
 import { logout } from '../../slices/authSlice';
-import { resetCart } from '../../slices/cartSlice';
+import { resetCart, clearCartItems } from '../../slices/cartSlice';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './header.css';
 
@@ -50,6 +50,7 @@ const Header = () => {
       await signout().unwrap();
       dispatch(logout());
       dispatch(resetCart());
+      dispatch(clearCartItems());
       navigate('/login');
     } catch (err) {
       console.log(err);

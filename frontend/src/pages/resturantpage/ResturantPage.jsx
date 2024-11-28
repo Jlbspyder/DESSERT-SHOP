@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';
 import { FaLocationArrow } from 'react-icons/fa';
-import { useGetAddressQuery, useGetAddressDetailsQuery } from '../../slices/addressApiSlice';
+import { useGetAddressQuery } from '../../slices/addressApiSlice';
 import PaginateAddress from '../../components/PaginateAddress';
 import Spinner from '../../components/Spinner';
 import {
@@ -19,10 +19,7 @@ const ResturantPage = () => {
 
 
   const { pageNumber, keyword } = useParams();
-  const {
-    data,
-    isLoading,
-  } = useGetAddressQuery({ pageNumber, keyword });
+  const { data, isLoading, error } = useGetAddressQuery({ pageNumber, keyword });
 
 
   const position = { lat: 6.52, lng: 3.37 };
@@ -72,10 +69,10 @@ const ResturantPage = () => {
             <h1>Resturants</h1>
             {isLoading ? (
               <Spinner />
-            ) : (
+            ) : error ? (<h3>{error?.data.message || error.error}</h3>) : (
               <div className='resturant-locations'>
-                {data.map((location) => (
-                  <div key={location.id} className='addresses'>
+                {data?.address.map((location) => (
+                  <div key={location._id} className='addresses'>
                     <h2>{location.name}</h2>
                     <p>{location.location}</p>
                     <span>

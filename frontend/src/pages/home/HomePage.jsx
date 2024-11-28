@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useParams } from 'react-router-dom';
 import { BiLogoPlayStore } from 'react-icons/bi';
 import { FaApple } from 'react-icons/fa';
 import { FaLocationArrow } from 'react-icons/fa';
@@ -9,6 +9,7 @@ import { IoIosArrowDropright } from 'react-icons/io';
 import { IoStorefrontSharp } from 'react-icons/io5';
 import Spinner from '../../components/Spinner';
 import { useGetTopMenuQuery } from '../../slices/menuApiSlice';
+import { useGetAddressQuery } from '../../slices/addressApiSlice';
 import './homepage.css'
 
 const Hero = () => {
@@ -22,7 +23,14 @@ const Hero = () => {
   const topMenuImg = menu?.map((el) => el.img )
   const length = topMenuImg?.length;
 
-
+  const submitHandler = () => {
+    if (text.trim()) {
+      navigate(`/resturant/search/${text}`);
+      setText('')
+    } else {
+      navigate('/');
+    }
+  };
 
   const navigate = useNavigate();
 
@@ -75,12 +83,6 @@ const Hero = () => {
     slideShow();
   });
 
-  const searchLocation = () => {
-    if (text) {
-      navigate('/resturant');
-    }
-  };
-
   return (
     <section className='hero'>
       {isLoading ? <Spinner /> : <section className='slide-show'>
@@ -126,7 +128,7 @@ const Hero = () => {
                 />
                   <FaLocationArrow
                     className='search-icon locate'
-                    onClick={searchLocation}
+                    onClick={submitHandler}
                   />
               </div>
           </div>

@@ -1,9 +1,9 @@
 const  menu = [
   { 
-    thumbnail: "./images/image-waffle-thumbnail.jpg",
-    mobile: "./images/image-waffle-mobile.jpg",
-    tablet: "./images/image-waffle-tablet.jpg",
-    desktop: "./images/image-waffle-desktop.jpg",
+    thumbnail: "/images/image-waffle-thumbnail.jpg",
+    mobileImg: "./images/image-waffle-Img.jpg",
+    tabletImg: "./images/image-waffle-tablet.jpg",
+    desktopImg: "./images/image-waffle-desktop.jpg",
     name: "Waffle with Berries",
     category: "Waffle",
     img: "/images/waffles.jpg",
@@ -14,10 +14,10 @@ const  menu = [
     numInStock: 20
   },
   {
-    thumbnail: "./images/image-creme-brulee-thumbnail.jpg",
-    mobile: "./images/image-creme-brulee-mobile.jpg",
-    tablet: "./images/image-creme-brulee-tablet.jpg",
-    desktop: "./images/image-creme-brulee-desktop.jpg",
+    thumbnail: "/images/image-creme-brulee-thumbnail.jpg",
+    mobileImg: "./images/image-creme-brulee-mobile.jpg",
+    tabletImg: "./images/image-creme-brulee-tablet.jpg",
+    desktopImg: "./images/image-creme-brulee-desktop.jpg",
     name: "Vanilla Bean Crème Brûlée",
     category: "Crème Brûlée",
     img: "/images/brulee.jpg",
@@ -28,10 +28,10 @@ const  menu = [
     numInStock: 20
   },
   {
-    thumbnail: "./images/image-macaron-thumbnail.jpg",
-    mobile: "./images/image-macaron-mobile.jpg",
-    tablet: "./images/image-macaron-tablet.jpg",
-    desktop: "./images/image-macaron-desktop.jpg",
+    thumbnail: "/images/image-macaron-thumbnail.jpg",
+    mobileImg: "./images/image-macaron-mobile.jpg",
+    tabletImg: "./images/image-macaron-tablet.jpg",
+    desktopImg: "./images/image-macaron-desktop.jpg",
     name: "Macaron Mix of Five",
     category: "Macaron",
     img: "/images/macaron.jpg",
@@ -42,10 +42,10 @@ const  menu = [
     numInStock: 20
   },
   {
-    thumbnail: "./images/image-tiramisu-thumbnail.jpg",
-    mobile: "./images/image-tiramisu-mobile.jpg",
-    tablet: "./images/image-tiramisu-tablet.jpg",
-    desktop: "./images/image-tiramisu-desktop.jpg",
+    thumbnail: "/images/image-tiramisu-thumbnail.jpg",
+    mobileImg: "./images/image-tiramisu-mobile.jpg",
+    tabletImg: "./images/image-tiramisu-tablet.jpg",
+    desktopImg: "./images/image-tiramisu-desktop.jpg",
     name: "Classic Tiramisu",
     category: "Tiramisu",
     img: "/images/Tiramisu.jpg",
@@ -56,10 +56,10 @@ const  menu = [
     numInStock: 20
   },
   {
-    thumbnail: "./images/image-baklava-thumbnail.jpg",
-    mobile: "./images/image-baklava-mobile.jpg",
-    tablet: "./images/image-baklava-tablet.jpg",
-    desktop: "./images/image-baklava-desktop.jpg",
+    thumbnail: "/images/image-baklava-thumbnail.jpg",
+    mobileImg: "./images/image-baklava-mobile.jpg",
+    tabletImg: "./images/image-baklava-tablet.jpg",
+    desktopImg: "./images/image-baklava-desktop.jpg",
     name: "Pistachio Baklava",
     category: "Baklava",
     img: "/images/Baklava.jpg",
@@ -70,10 +70,10 @@ const  menu = [
     numInStock: 20
   },
   {
-    thumbnail: "./images/image-meringue-thumbnail.jpg",
-    mobile: "./images/image-meringue-mobile.jpg",
-    tablet: "./images/image-meringue-tablet.jpg",
-    desktop: "./images/image-meringue-desktop.jpg",
+    thumbnail: "/images/image-meringue-thumbnail.jpg",
+    mobileImg: "./images/image-meringue-mobile.jpg",
+    tabletImg: "./images/image-meringue-tablet.jpg",
+    desktopImg: "./images/image-meringue-desktop.jpg",
     name: "Lemon Meringue Pie",
     category: "Pie",
     img: "/images/lemon-pie.jpg",
@@ -84,10 +84,10 @@ const  menu = [
     numInStock: 20
   },
   {
-    thumbnail: "./images/image-cake-thumbnail.jpg",
-    mobile: "./images/image-cake-mobile.jpg",
-    tablet: "./images/image-cake-tablet.jpg",
-    desktop: "./images/image-cake-desktop.jpg",
+    thumbnail: "/images/image-cake-thumbnail.jpg",
+    mobileImg: "./images/image-cake-mobile.jpg",
+    tabletImg: "./images/image-cake-tablet.jpg",
+    desktopImg: "./images/image-cake-desktop.jpg",
     name: "Red Velvet Cake",
     category: "Cake",
     img: "/images/red-velvet.jpg",
@@ -98,10 +98,10 @@ const  menu = [
     numInStock: 20
   },
   {
-    thumbnail: "./images/image-brownie-thumbnail.jpg",
-    mobile: "./images/image-brownie-mobile.jpg",
-    tablet: "./images/image-brownie-tablet.jpg",
-    desktop: "./images/image-brownie-desktop.jpg",
+    thumbnail: "/images/image-brownie-thumbnail.jpg",
+    mobileImg: "./images/image-brownie-mobile.jpg",
+    tabletImg: "./images/image-brownie-tablet.jpg",
+    desktopImg: "./images/image-brownie-desktop.jpg",
     name: "Salted Caramel Brownie",
     category: "Brownie",
     img: "/images/brownie.jpg",
@@ -112,10 +112,10 @@ const  menu = [
     numInStock: 20
   },
   {
-    thumbnail: "./images/image-panna-cotta-thumbnail.jpg",
-    mobile: "./images/image-panna-cotta-mobile.jpg",
-    tablet: "./images/image-panna-cotta-tablet.jpg",
-    desktop: "./images/image-panna-cotta-desktop.jpg",
+    thumbnail: "/images/image-panna-cotta-thumbnail.jpg",
+    mobileImg: "./images/image-panna-cotta-mobile.jpg",
+    tabletImg: "./images/image-panna-cotta-tablet.jpg",
+    desktopImg: "./images/image-panna-cotta-desktop.jpg",
     name: "Vanilla Panna Cotta",
     category: "Panna Cotta",
     img: "/images/Vanilla-Panna.jpg",
@@ -154,75 +154,6 @@ const desserts = [
   },
 ]
 
-const address = [
-  {
-    id: "1",
-    name: "Victoria Island",
-    region: "vi",
-    location: "274, Ajose Adeogun"
-  },
-  {
-    id: "2",
-    name: "Palms",
-    region: "palms",
-    location: "1, Bisway Street, Maroko, Lekki"
-  },
-  {
-    id: "3",
-    name: "Lekki",
-    region: "lekki",
-    location: "11b, Victoria Arobieke Street, Lekki Phase 1"
-  },
-  {
-    id: "4",
-    name:  "Agungi",
-    region: "lekki",
-    location: "10, Agungi Ajiran Road, Agungi"
-  },
-  {
-    id: "5",
-    name: "Yaba",
-    region: "yaba",
-    location: "282, Herbert Macaulay Way"
-  },
-  {
-    id: "6",
-    name: "Gbagada",
-    region: "gbagada",
-    location: "296, Gbagada-Oworonshoki Expressway "
-  },
-  {
-    id: "7",
-    name: "Festac",
-    region: "festac",
-    location: "132, Festac Access Road"
-  },
-  {
-    id: "8",
-    name: "Ajah",
-    region: "ajah",
-    location: "237, Lekki-Epe Expressway, Ajah"
-  },
-  {
-    id: "9",
-    name: "Ikeja GRA",
-    region: "ikeja",
-    location: "32, Joel Ogunnaike Street"
-  },
-  {
-    id: "10",
-    name: "Ikeja City mall",
-    region: "ikeja",
-    location: "Obafemi Awolowo Way, Alausa, Ikeja"
-  },
-  {
-    id: "11",
-    name: "Surulere",
-    region: "surulere",
-    location: "69 Adeniran Odunsanya Street, Surulere"
-  }
-]
-
-export {menu, desserts, address};
+export {menu, desserts };
 
 

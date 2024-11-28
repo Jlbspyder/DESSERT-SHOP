@@ -7,7 +7,6 @@ import cookieParser from 'cookie-parser';
 dotenv.config();
 import connectDB from './config/db.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
-import { desserts, address } from './data/menu.js';
 const port = process.env.PORT || 5000;
 import uploadRoute from './routes/uploadRoute.js';
 import addressRoute from './routes/addressRoute.js'
@@ -29,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 // Cookie parser middleware
 app.use(cookieParser());
 
-app.use('api/address', addressRoute);
+app.use('/api/address', addressRoute);
 app.use('/api/menu', menuRoute);
 app.use('/api/users', userRoute);
 app.use('/api/orders', orderRoute);
@@ -58,9 +57,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.get('/api/address', (req, res) => {
-  res.json(address);
-});
 
 app.use(notFound);
 app.use(errorHandler);
