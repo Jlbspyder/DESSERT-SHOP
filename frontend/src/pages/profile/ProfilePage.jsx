@@ -135,7 +135,7 @@ const Profile = () => {
               </div>
               <br/>
               <div className='welcome-bottom'>
-                <h1>{userInfo.firstname}</h1>
+                <h1>{userInfo.firstname.toUpperCase()}</h1>
               </div>
             </div>
             <img

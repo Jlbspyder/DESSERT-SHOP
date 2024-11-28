@@ -132,7 +132,7 @@ const Header = () => {
         <div className='profile-menu'>
           {userInfo && !userInfo.isAdmin ? (
             <small id='logo' onClick={handleOpenProfile}>
-              Hi {userInfo.firstname.toUpperCase()}
+              Hi {userInfo.firstname}
             </small>
           ) : userInfo ? (
             ''
@@ -144,7 +144,7 @@ const Header = () => {
           )}
           {userInfo && userInfo.isAdmin && (
             <small id='logo' onClick={handleOpenProfile}>
-              Hi {userInfo.firstname.toUpperCase()}
+              Hi {userInfo.firstname}
             </small>
           )}
           <div className='shopping'>
