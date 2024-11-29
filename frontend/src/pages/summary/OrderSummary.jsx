@@ -70,7 +70,6 @@ const OrderSummary = () => {
     }
   }, [order, paypal, paypalDispatch, loadingPayPal, errorPayPal]);
 
-console.log(order)
   const deliverOrderHandler = async () => {
     try {
       await deliverOrder(orderId);

@@ -18,7 +18,7 @@ const AddressBook = () => {
       <div className='button-bg'>
         <button className='add-address'>add new address</button>
       </div>
-      {!shippingAddress ? (<span>You haven't entered any address</span>) : <>
+      {shippingAddress.address === '' ? (<span>You haven't entered any address</span>) : <>
         <div className="addresses">
             <p>{shippingAddress.name}</p>
             <p>{shippingAddress.address}</p>
@@ -27,11 +27,11 @@ const AddressBook = () => {
             <p>{shippingAddress.country}</p>
         </div>
       </>}
-            {shippingAddress && <div className='address-flex'>
+            {shippingAddress.address !== '' && <div className='address-flex'>
                 <p id='default-address'>Default delivery address</p>
                 <FaCheck className='default-address-check' />
             </div>}
-            {shippingAddress && <p className='default-address'>Set as your default billing address</p>}
+            {shippingAddress.address !== '' && <p className='default-address'>Set as your default billing address</p>}
     </div>
   );
 };
