@@ -93,12 +93,12 @@ const OrderSummary = () => {
     });
   };
 
-  // const onApproveTest = async () => {
-  //   await payForOrder({ orderId, details: { payer: {} } });
-  //   refetch();
-  //   dispatch(clearCartItems());
-  //   toast.success('Payment successful');
-  // };
+  const onApproveTest = async () => {
+    await payForOrder({ orderId, details: { payer: {} } });
+    refetch();
+    dispatch(clearCartItems());
+    toast.success('Payment successful');
+  };
 
   const onError = (error) => {
     toast.error(error.message);
@@ -242,6 +242,15 @@ const OrderSummary = () => {
                 <Spinner />
               ) : (
                 <div>
+                    <div>
+                    <button
+                      type='button'
+                      className='confirm-order btn-straight'
+                      onClick={onApproveTest}
+                    >
+                      TEST PAY
+                    </button>
+                  </div>
                   <PayPalButtons
                     createOrder={createOrder}
                     onApprove={onApprove}
