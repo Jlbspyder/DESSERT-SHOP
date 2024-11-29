@@ -167,7 +167,7 @@ const OrderSummary = () => {
         </div>
         <div className='sumary'>
           {order.paid ? (
-            <p id='paid'>Paid on {order.paidAt.substring(0, 10)}</p>
+            <p id='paid'>Paid on {order.paidAt.substring(11, 19)} GMT</p>
           ) : (
             <p id='not-paid'>Not Paid</p>
           )}
@@ -182,8 +182,10 @@ const OrderSummary = () => {
               <div className='sumary-info'>
                 <div>
                   <h4>{item.name}</h4>
-                  <p id='qty'>Quantity: {item.quantity}</p>
-                  @{' '}<small>${item.price.toFixed(2)}</small>
+                    <div className="price-container">
+                      <p id='qty'>Quantity: {item.quantity}</p>
+                      <p id='qty'>@{' '}${item.price.toFixed(2)}</p>
+                    </div>
                 </div>
                 <p>${(item.price * item.quantity).toFixed(2)}</p>
               </div>

@@ -106,14 +106,15 @@ const PlaceOrderPage = () => {
               <div key={index} className='order-dets'>
                 <img src={item.thumbnail} alt={item.name} />
                 <div className='place-order-description'>
-                  <div className='description-wrapper'>
+                  <div>
                     <h5>{item.name}</h5>
                     <p>{item.category}</p>
                     <br />
-                    <p id='qty'>Quantity: {item.quantity}</p>
-                    @{' '}<small>${item.price.toFixed(2)}</small>
+                    <div className="price-container">
+                      <p id='qty'>Quantity: {item.quantity}</p>
+                      <p id='qty'>@{' '}${item.price.toFixed(2)}</p>
+                    </div>
                   </div>
-                  <br />
                   <div className='price-wrapper'>
                     <strong>
                       <p>${(item.price * item.quantity).toFixed(2)}</p>

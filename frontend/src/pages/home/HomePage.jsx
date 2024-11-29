@@ -93,7 +93,7 @@ const Hero = () => {
         >
           <IoIosArrowDropleft className='left-arrow' onClick={prevSlide} />
           <IoIosArrowDropright className='right-arrow' onClick={nextSlide} />
-          {menu.map((dessert, index) => (
+          {menu?.map((dessert, index) => (
             <Link
               to={`/menu/${dessert._id}`}
               key={dessert._id}
@@ -105,7 +105,7 @@ const Hero = () => {
             </Link>
           ))}
           <div className='pointer'>
-            {menu.map((dessert, index) => (
+            {menu?.map((dessert, index) => (
               <div
                 key={dessert._id}
                 className={`dot ${currentIndex === index ? 'alive' : ''}`}
