@@ -298,8 +298,7 @@
 }
 .gig {
   position: fixed;
-  inset: 10% 0 0 0;
-  height: 100vh;
+  inset: 6% 0 0 0;
   animation: zoom 0.5ms ease-in-out;
   z-index: 9999;
   border-radius: 10px;
@@ -600,8 +599,13 @@
   #abbrv-name {
     display: none;
   }
+  .gig {
+    position: absolute;
+    inset: 100px 0 0 250px;
+    overflow: visible;
+  }
   .gig .item-price {
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 600;
   }
   .confirm p {
@@ -742,8 +746,7 @@
   }
   .gig {
     position: absolute;
-    inset: 20% 0 0 33%;
-    height: 20%;
+    inset: 10% 0 0 33%;
     z-index: 9999;
     overflow-y: visible;
   }
@@ -841,7 +844,9 @@
   }
   .gig {
     position: absolute;
-    inset: 8% 0 0 33%;
+    background: red;
+    height: 180px;
+    inset: 7% 0 0 33%;
     overflow-y: visible;
     z-index: 9999;
   }
