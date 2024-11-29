@@ -1,6 +1,6 @@
-# Dessert Ecommerce Shop
+# Dessert Shop Ecommerce Website
 
-This is an eCommerce platform built with the MERN stack and Redux. This project was scafolded by vite.
+This is an eCommerce platform built with the MERN stack and Redux. This project was scafolded with vite.
 
 ## Overview
 
@@ -9,7 +9,6 @@ This is an eCommerce platform built with the MERN stack and Redux. This project 
 - Full featured shopping cart
 - Add items to the cart and remove them
 - Increase/decrease the number of items in the cart
-- Reset their selections when they click "Start New Order"
 - Menu reviews and ratings
 - Top menu carousel
 - Pagination
@@ -22,8 +21,7 @@ This is an eCommerce platform built with the MERN stack and Redux. This project 
 - Checkout process (shipping, payment method, etc)
 - Paypal / Credit card integration
 - Database seeder (menu & users)
-- See an order confirmation modal when they click "Confirm Order"
-- View the optimal layout for the interface depending on their device's screen size
+- View the optimal layout for the interface depending on device's screen size
 - See hover and focus states for all interactive elements on the page
 
 ### Screenshot
@@ -39,7 +37,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Live Site URL: [https://dessert-shop.onrender.com/](https://your-live-site-url.com)
+- Live Site URL: [https://dessert-shop.onrender.com/](https://dessert-shop.onrender.com/)
 
 ### Built with
 
