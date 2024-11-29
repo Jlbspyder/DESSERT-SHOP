@@ -5,20 +5,21 @@ import Address from '../models/addressModel.js';
 //GET /api/menu
 //Public access
 const getAddress = asynchandler(async (req, res) => {
-    const pageSize = process.env.PAGINATION_LIMIT;
-    const page = Number(req.query.pageNumber) || 1;
-  
-    const keyword = req.query.keyword ? { region: { $regex: req.query.keyword, $options: 'i' }} : {};
-  
-    const count = await Address.countDocuments({...keyword});
-  
-    const address = await Address.find({...keyword})
-      .limit(pageSize)
-      .skip(pageSize * (page - 1));
-      res.json({ address, page, pages: Math.ceil(count / pageSize) });
-  });
+  const pageSize = process.env.PAGINATION_LIMIT;
+  const page = Number(req.query.pageNumber) || 1;
 
-  
+  const keyword = req.query.keyword
+    ? { name: { $regex: req.query.keyword, $options: 'i' } }
+    : {};
+
+  const count = await Address.countDocuments({ ...keyword });
+
+  const address = await Address.find({ ...keyword })
+    .limit(pageSize)
+    .skip(pageSize * (page - 1));
+  res.json({ address, page, pages: Math.ceil(count / pageSize) });
+});
+
 //Fetch Single address
 //GET /api/address/:id
 //Public access
@@ -33,4 +34,4 @@ const getAddressById = asynchandler(async (req, res) => {
   }
 });
 
-  export { getAddress, getAddressById  }
+export { getAddress, getAddressById };

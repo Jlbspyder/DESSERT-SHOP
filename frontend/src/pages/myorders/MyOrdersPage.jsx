@@ -1,7 +1,7 @@
 import React from 'react'
 import './myorders.css'
-import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import { IoIosArrowBack } from 'react-icons/io';
 import { FaTimes } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { useGetMyOrdersQuery } from '../../slices/ordersApiSlice';
@@ -14,10 +14,13 @@ const MyOrdersPage = () => {
 
 
   return (
-    <div className='my-orders'>
+    <div className='my-details'>
       { isLoading ? (<Spinner />) : (
         <>
-        <h1>My Orders</h1>
+         <Link to='/profile'>
+          <IoIosArrowBack className='back' />
+        </Link>
+        <h2>MY ORDERS</h2>
         {orders?.length === 0 ? (<span>You haven't placed any order</span>) : (<>
           <table id='crt'>
             <thead>
@@ -46,7 +49,7 @@ const MyOrdersPage = () => {
                   <span className='cell-header'>PAID:</span> {order.paid ? (order.paidAt.substring(0, 10)) : (<FaTimes style={{color: 'red'}} />)}
                   </td>
                   <td>
-                  <span className='cell-header'>D:</span> {order.delivered ? (order.deliveredAt.substring(0, 10)) : (<FaTimes style={{color: 'red'}} />)}
+                  <span className='cell-header'>DELIVERED:</span> {order.delivered ? (order.deliveredAt.substring(0, 10)) : (<FaTimes style={{color: 'red'}} />)}
                   </td>
                   <td>
                     <div className="menu-buttons">

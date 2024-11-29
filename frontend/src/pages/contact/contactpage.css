@@ -6,6 +6,9 @@
     padding: 10px;
     border-top: 5px solid var(--Beige);
 }
+.contact__ {
+    padding-inline: 20px;
+}
 .contact-flex button {
     padding: 0.5em 1em;
     text-transform: uppercase;

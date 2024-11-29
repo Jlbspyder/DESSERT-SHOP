@@ -70,7 +70,7 @@ const OrderSummary = () => {
     }
   }, [order, paypal, paypalDispatch, loadingPayPal, errorPayPal]);
 
-
+console.log(order)
   const deliverOrderHandler = async () => {
     try {
       await deliverOrder(orderId);
@@ -133,14 +133,14 @@ const OrderSummary = () => {
         </div>
         {order.paid && !order.delivered && (
           <p>
-            Thank you <strong>{order.user.name.toUpperCase()}</strong> for your
+            Thank you <strong>{userInfo?.firstname}</strong> for your
             order! We are preparing your desserts. We hope you enjoy your meal.
-            An email has been sent to <strong>{order.user.email}</strong> with
+            An email has been sent to <strong>{order?.user.email}</strong> with
             details of your order.
           </p>
         )}
         {order.paid && order.delivered && <p>
-        Thank you <strong>{order.user.name.toUpperCase()}</strong> for your
+        Thank you <strong>{userInfo?.firstname.toUpperCase()}</strong> for your
         order! We hope you enjoyed your meal.
       </p>}
         {order.paid && (

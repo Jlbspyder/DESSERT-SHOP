@@ -9,7 +9,8 @@ const orderSchema = mongoose.Schema(
     },
     orderItems: [
       {
-        name: { type: String, required: false },
+        firstname: { type: String, required: false },
+        lastname: { type: String, required: false },
         quantity: { type: Number, required: false },
         thumbnail: { type: String, required: false },
         price: { type: Number, required: false },

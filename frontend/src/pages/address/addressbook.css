@@ -40,6 +40,9 @@
   border-top: 1px solid var(--Beige);
   cursor: pointer;
 }
+.contact__ span {
+    padding-left: 20px;
+}
 .address-flex {
   display: flex;
   align-items: center;

@@ -1,22 +1,41 @@
 .profile-page {
     background: var(--Offwhite);
-    margin-top: 65px;
+    margin-top: 60px;
   }
   .profile-page-header {
     font-size: 1.3rem;
   }
+  .profile-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .profile-btn {
+    font-size: 30px;
+  }
   .welcome {
       position: absolute;
-      top: 20%;
-      left: 10%;
+      top: 60px;
+      left: 100px;
   }
-  .welcome-top, .welcome-middle, .welcome-bottom {
+  .welcome-middle, .welcome-bottom {
       background: var(--Black);
       margin: 0;
       width: 280px;
       height: 60px;
       border-radius: 5px;
       color: var(--White);
+  }
+  .welcome-middle {
+    width: 100px; 
+  }
+  .avatar {
+    padding-top: 10px;
+    font-size: 40px;
+    background: var(--Black);
+    color: var(--White);
+    text-align: center;
   }
   .welcome-bottom {
     width: 100%;
@@ -33,13 +52,18 @@
   }
   .profile-page h3 {
     font-weight: 400;
+    font-size: 20px;
   }
   .profile-page h1 {
     text-align: center;
   }
+  .symbol {
+    font-size: 50px;
+  }
   .profileMenu {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 1.5rem;
     color: var(--Black);
     border: 2px solid var(--White);
@@ -49,7 +73,6 @@
     display: flex;
     flex-direction: column-reverse;
     gap: 10px;
-    margin-top: 10px;
   }
   .profile-page-image {
       position: relative;
@@ -65,9 +88,18 @@
     .profile-page {
       display: flex;
       flex-direction: column;
-      margin: 100px auto 20px auto;
+      margin: 60px auto 20px auto;
       gap: 2rem;
       z-index: 7777;
+    }
+    .profile-flex {
+      gap: 15px;
+    }
+    .profile-btn {
+      display: none;
+    }
+    .symbol {
+      font-size: 30px;
     }
     .profile-page a:hover {
       color: var(--Red);
@@ -81,7 +113,7 @@
       justify-content: space-between;
       height: 380px;
       padding-inline: 10px ;
-      margin: 30px 0 10px 0;
+      margin: 0 0 10px 0;
       z-index: 7777;
     }
     .profileMenu {
@@ -96,6 +128,7 @@
     }
     .profile-page h3 {
       font-weight: 400;
+      font-size: 14px;
     }
     .profile-page h1 {
       display: block;
@@ -108,7 +141,7 @@
   }
   @media (min-width: 1000px) {
      .profile-page-flex {
-      margin: 20px auto;
+      margin: 0 auto 20px auto;
       width: 80%;
     }
      .profile-page-image {

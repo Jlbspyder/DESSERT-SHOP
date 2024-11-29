@@ -51,7 +51,7 @@ const UserListPage = () => {
                 </td>
                 <td>
                   <span className='cell-header'>NAME:</span>{' '}
-                  {user.name.toUpperCase()}
+                  {user.firstname.toUpperCase()}
                 </td>
                 <td>
                   <span className='cell-header'>EMAIL:</span>{' '}
