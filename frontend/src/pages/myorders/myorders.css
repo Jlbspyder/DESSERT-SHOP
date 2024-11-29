@@ -25,9 +25,9 @@ thead {
   color: var(--Red);
 }
 .check-details {
-    font-size: 9px;
-    height: 20px;
-    padding: 0.6em;
+  font-size: 9px;
+  height: 20px;
+  padding: 0.6em;
 }
 @media (min-width: 600px) {
   table {
@@ -37,6 +37,9 @@ thead {
   td {
     height: 30px;
     padding: 10px 15px;
+  }
+  .check-details {
+    margin-top: 15px;
   }
 }
 @media (min-width: 600px) and (max-width: 700px) {
@@ -54,5 +57,5 @@ thead {
     font-size: 9px;
     height: 25px;
     padding: 0.8em;
-}
+  }
 }

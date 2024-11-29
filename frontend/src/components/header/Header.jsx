@@ -131,9 +131,11 @@ const Header = () => {
         </div>
         <div className='profile-menu'>
           {userInfo && !userInfo.isAdmin ? (
-            <small id='logo' onClick={handleOpenProfile}>
+          <>
+            {location.pathname !== '/profile' && <small id='logo' onClick={handleOpenProfile}>
               Hi {userInfo?.firstname?.toUpperCase()}
-            </small>
+            </small>}
+          </>
           ) : userInfo ? (
             ''
           ) : (

@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { saveShippingAddress } from '../../slices/cartSlice';
-import CheckoutSteps from '../../components/checkout/CheckoutSteps';
-import './shipping.css';
+import { saveShippingAddress } from '../slices/cartSlice';
 
-const ShippingPage = () => {
+const AddAddressPage = () => {
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
   const [shipData, setShipData] = useState({
@@ -25,18 +23,16 @@ const ShippingPage = () => {
     setShipData((prevShipData) => ({ ...prevShipData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(saveShippingAddress({ ...shipData }));
-    navigate('/placeorder');
+  const handleSubmit = () => {
+    setAdd(true)
+    // dispatch(saveShippingAddress({ ...shipData }));
+    navigate('/address');
   };
 
   return (
     <>
-      <div className='reg'>
-        <CheckoutSteps step1 step2 />
+      <div className='reg add'>
         <form onSubmit={handleSubmit}>
-          <h1>Shipping</h1>
           <div className='form-control'>
             <label>Name*</label>
             <input
@@ -104,7 +100,7 @@ const ShippingPage = () => {
             />
           </div>
           <button className='login-btn' type='submit'>
-            Continue
+            add
           </button>
         </form>
       </div>
@@ -112,4 +108,4 @@ const ShippingPage = () => {
   );
 };
 
-export default ShippingPage;
+export default AddAddressPage;

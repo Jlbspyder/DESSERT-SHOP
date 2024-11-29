@@ -83,7 +83,7 @@ const ChangePassword = () => {
           <Link to='/profile'>
             <IoIosArrowBack className='pw-back' />
           </Link>
-          <h2>MY DETAILS</h2>
+          <h2>CHANGE PASSWORD</h2>
         </div>
     <form onSubmit={submitHandler} className='update-acct'>
       <div className='form-control'>

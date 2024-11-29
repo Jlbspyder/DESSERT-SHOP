@@ -111,6 +111,7 @@ const PlaceOrderPage = () => {
                     <p>{item.category}</p>
                     <br />
                     <p id='qty'>Quantity: {item.quantity}</p>
+                    @{' '}<small>${item.price.toFixed(2)}</small>
                   </div>
                   <br />
                   <div className='price-wrapper'>
@@ -150,8 +151,8 @@ const PlaceOrderPage = () => {
           </div>
           <div className='order-details'>
             <span>{shippingAddress.name},</span> {shippingAddress.address},{' '}
-            {shippingAddress.city}, {shippingAddress.state}
-            {shippingAddress.postCode}, {shippingAddress.country}.
+            {shippingAddress.city}, {shippingAddress.state},{' '}
+            {shippingAddress.postalCode}, {shippingAddress.country}.
           </div>
           <h3 id='info'>2. PAYMENT METHOD</h3>
           <div>

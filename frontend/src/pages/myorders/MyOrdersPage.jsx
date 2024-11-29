@@ -46,10 +46,10 @@ const MyOrdersPage = () => {
                   <span className='cell-header'>TOTAL:</span> {order.totalPrice}
                   </td>
                   <td>
-                  <span className='cell-header'>PAID:</span> {order.paid ? (order.paidAt.substring(0, 10)) : (<FaTimes style={{color: 'red'}} />)}
+                  <span className='cell-header'>PAID:</span> {order.paid ? (order.paidAt.substring(11, 16)) : (<FaTimes style={{color: 'red'}} />)}{order.paid && ' GMT'}
                   </td>
                   <td>
-                  <span className='cell-header'>DELIVERED:</span> {order.delivered ? (order.deliveredAt.substring(0, 10)) : (<FaTimes style={{color: 'red'}} />)}
+                  <span className='cell-header'>DELIVERED:</span> {order.delivered ? (order.deliveredAt.substring(11, 16)) : (<FaTimes style={{color: 'red'}} />)}{order.delivered && ' GMT'}
                   </td>
                   <td>
                     <div className="menu-buttons">

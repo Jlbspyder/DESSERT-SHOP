@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   padding: 10px 20px 0 20px;
+  margin-top: 65px;
   background: var(--Offwhite);
   animation: zoom 0.5s ease-in-out;
 }
@@ -12,7 +13,6 @@
 .career-menu {
   display: flex;
   gap: 10px;
-  padding-left: 1rem;
 }
 .career-menu a {
   background: transparent;
@@ -40,9 +40,9 @@
 .career-btn {
   background: var(--Red);
   border: none;
-  padding: 0.7em 1.3rem;
-  /* font-size: 1rem; */
+  padding: 1.1em 1.3rem;
   font-weight: 600;
+  text-transform: uppercase;
   margin: 1rem;
   color: var(--Offwhite);
   border-radius: 10px;
@@ -94,7 +94,6 @@
   }
   .career {
     align-items: center;
-    margin-top: 50px;
   }
   .career-image-container {
     align-items: center;
@@ -122,14 +121,5 @@
   }
   .career-image {
     height: 250px;
-  }
-}
-@media (min-width: 1050px) {
-  .career {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0;
-    padding: 10px 20px;
-    animation: zoom 0.5s ease-in-out;
   }
 }

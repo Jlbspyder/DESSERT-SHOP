@@ -23,7 +23,6 @@ const OrderSummary = () => {
     error,
   } = useGetOrderDetailsQuery(orderId);
 
-
   const [deliverOrder, { isLoading: loadingDeliver }] =
     useDeliveredOrderMutation();
 
@@ -49,6 +48,7 @@ const OrderSummary = () => {
   } = useGetPayPalClientIdQuery();
 
   const { userInfo } = useSelector((state) => state.auth);
+
 
   useEffect(() => {
     if (!errorPayPal && !loadingPayPal && paypal.clientId) {
@@ -130,7 +130,7 @@ const OrderSummary = () => {
         <div id='info'>
           {!order.paid ? <h3>ORDER SUMMARY</h3> : <h3>ORDER COMPLETE</h3>}
         </div>
-        {order.paid && !order.delivered && (
+        {order.paid && !order.delivered && !userInfo.isAdmin && (
           <p>
             Thank you <strong>{userInfo?.firstname}</strong> for your
             order! We are preparing your desserts. We hope you enjoy your meal.
@@ -138,7 +138,7 @@ const OrderSummary = () => {
             details of your order.
           </p>
         )}
-        {order.paid && order.delivered && <p>
+        {order.paid && order.delivered && !userInfo.isAdmin &&  <p>
         Thank you <strong>{userInfo?.firstname.toUpperCase()}</strong> for your
         order! We hope you enjoyed your meal.
       </p>}
@@ -183,6 +183,7 @@ const OrderSummary = () => {
                 <div>
                   <h4>{item.name}</h4>
                   <p id='qty'>Quantity: {item.quantity}</p>
+                  @{' '}<small>${item.price.toFixed(2)}</small>
                 </div>
                 <p>${(item.price * item.quantity).toFixed(2)}</p>
               </div>
@@ -203,8 +204,8 @@ const OrderSummary = () => {
         <div className='order-details'>
           <span>{order.shippingAddress.name},</span>{' '}
           {order.shippingAddress.address}, {order.shippingAddress.city},{' '}
-          {order.shippingAddress.state}
-          {order.shippingAddress.postCode}, {order.shippingAddress.country}.
+          {order.shippingAddress.state},{' '}
+          {order.shippingAddress.postalCode}, {order.shippingAddress.country}.
         </div>
         <div className='confirm-page'>
           {order.paid && <h3>ORDER SUMMARY</h3>}

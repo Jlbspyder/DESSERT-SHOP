@@ -44,6 +44,7 @@ import UserEditPage from './pages/admin/useredit/UserEditPage.jsx';
 import MyDetailsPage from './pages/mydetails/MyDetailsPage.jsx';
 import AddressBook from './pages/address/AddressBook.jsx';
 import ContactPage from './pages/contact/ContactPage.jsx';
+import AddAddressPage from './components/AddAddressPage.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -81,6 +82,7 @@ const router = createBrowserRouter(
         <Route path='/mydetails' element={<MyDetailsPage />} />
         <Route path='/address' element={<AddressBook /> } />
         <Route path='/contact' element={<ContactPage /> } />
+        <Route path='/addaddress' element={<AddAddressPage /> } />
       </Route>
 
       <Route path='' element={<AdminRoute />}>

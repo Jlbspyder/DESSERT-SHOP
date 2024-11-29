@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link, useParams } from 'react-router-dom';
+import { useNavigate, useLocation, Link, useParams } from 'react-router-dom';
 import { FaLocationArrow } from 'react-icons/fa';
 import { useGetAddressQuery } from '../../slices/addressApiSlice';
 import PaginateAddress from '../../components/PaginateAddress';
@@ -37,6 +37,7 @@ const ResturantPage = () => {
     }
   };
 
+
   return (
     <div className='resturant'>
       <div className='resturant-page'>
@@ -48,7 +49,8 @@ const ResturantPage = () => {
             <h3>/</h3>
           </Link>
           <Link
-            className={location.pathname === '/resturant' ? 'career-page' : ''}
+           to={'/resturant'}
+            className={location.pathname === '/resturant' ? 'career-page' : '' }
           >
             <h3>Resturants</h3>
           </Link>

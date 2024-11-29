@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
 import { useSelector } from 'react-redux';
 import { FaCheck } from "react-icons/fa6";
+import AddAddressPage from '../../components/AddAddressPage';
 import './addressbook.css';
 
 const AddressBook = () => {
+    const [add, setAdd] = useState(false)
     const cart = useSelector((state) => state.cart);
     const { shippingAddress } = cart
-
   return (
     <div className='address-book contact__'>
       <Link to='/profile'>
         <IoIosArrowBack className='back' />
       </Link>
       <h2>ADDRESS BOOK</h2>
-      <div className='button-bg'>
-        <button className='add-address'>add new address</button>
-      </div>
-      {shippingAddress.address === '' ? (<span>You haven't entered any address</span>) : <>
+      {add && <AddAddressPage />}
+      {!add && <div className='button-bg'>
+        <button onClick={() => setAdd(true)}  className='add-address'>add new address</button>
+      </div>}
+      {shippingAddress.address === '' && !add ? (<span>You haven't entered any address</span>) : <>
         <div className="addresses">
             <p>{shippingAddress.name}</p>
             <p>{shippingAddress.address}</p>
