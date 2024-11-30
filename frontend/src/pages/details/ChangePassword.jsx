@@ -11,6 +11,7 @@ import {
 import { logout, setCredentials } from '../../slices/authSlice';
 import './changepassword.css';
 import Spinner from "../../components/Spinner";
+import Meta from '../../components/Meta';
 
 const ChangePassword = () => {
   const [formData, setFormData] = useState({
@@ -80,6 +81,7 @@ const ChangePassword = () => {
   return (
   <>
         <div className="password">
+          <Meta title='JLB24 | Change password' />
           <Link to='/profile'>
             <IoIosArrowBack className='pw-back' />
           </Link>

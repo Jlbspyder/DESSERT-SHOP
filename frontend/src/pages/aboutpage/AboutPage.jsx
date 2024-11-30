@@ -1,9 +1,11 @@
 import React from 'react';
+import Meta from '../../components/Meta';
 import './aboutpage.css';
 
 const AboutPage = () => {
   return (
     <div className='about-page'>
+      <Meta title='JLB24 | About Desserts' />
       <div className='about'>
         <br />
         <h1>Great Food Comes First</h1>

@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { IoIosArrowBack } from 'react-icons/io';
 import './mydetails.css';
+import Meta from '../../components/Meta';
 
 const MyDetailsPage = () => {
   const { userInfo } = useSelector((state) => state.auth);
 
   return (
     <div className='my-details'>
+      <Meta title='JLB24 | My details' />
         <Link to='/profile'>
           <IoIosArrowBack className='back' />
         </Link>

@@ -95,7 +95,7 @@ const ItemPage = () => {
           <Link to={'/menu'}>
             <IoChevronBack className='sm-back-btn' />
           </Link>
-          <Meta title={menu.name} />
+          <Meta title={`JLB24 | ${menu.name}`} />
           <img src={menu.img} alt='dessert-image' className='item-pix' />
           <h1>{menu.name}</h1>
           <Rating value={menu.rating} text={`${menu.numReviews} reviews`} />

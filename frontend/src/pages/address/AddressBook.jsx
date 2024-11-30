@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { FaCheck } from "react-icons/fa6";
 import AddAddressPage from '../../components/AddAddressPage';
 import './addressbook.css';
+import Meta from '../../components/Meta';
 
 const AddressBook = () => {
     const [add, setAdd] = useState(false)
@@ -12,6 +13,7 @@ const AddressBook = () => {
     const { shippingAddress } = cart
   return (
     <div className='address-book contact__'>
+      <Meta title='JLB24 | Address book' />
       <Link to='/profile'>
         <IoIosArrowBack className='back' />
       </Link>

@@ -11,7 +11,7 @@ import { savePaymentMethod } from '../../slices/cartSlice';
 import { useCreateOrderMutation } from '../../slices/ordersApiSlice';
 import { clearCartItems, clearShippingAddress } from '../../slices/cartSlice';
 import Timer from '../../components/Timer';
-import PaymentPage from '../payment/PaymentPage';
+import Meta from '../../components/Meta';
 import './placeorder.css';
 
 const PlaceOrderPage = () => {
@@ -88,31 +88,37 @@ const PlaceOrderPage = () => {
     }
     const timer = setTimeout(() => {
       dispatch(clearShippingAddress());
-    }, 3000)
+    }, 3000);
     return () => {
       clearTimeout(timer);
     };
   };
   return (
     <div className='order'>
+      <Meta title='JLB24 | Place order' />
       <CheckoutSteps step1 step2 step3 />
-      <br/>
+      <br />
       <h2>CHECKOUT</h2>
       <div className='place-order'>
         <div className='place-order-info1'>
-          <h3 id='arrival'>ESTIMATED ARRIVAL:&nbsp;&nbsp; {<Timer duration={60 * 60 * 1000} />}&nbsp; &nbsp;<span>if you place the order now</span></h3>
+          <h3 id='arrival'>
+            ESTIMATED ARRIVAL:&nbsp;&nbsp; {<Timer duration={60 * 60 * 1000} />}
+            &nbsp; &nbsp;<span>if you place the order now</span>
+          </h3>
           <div className='order-summary'>
-            {cartItems.map((item, index) => (
-              <div key={index} className='order-dets'>
-                <img src={item.thumbnail} alt={item.name} />
+            {cartItems.map((item) => (
+              <div key={item._id} className='order-dets'>
+                <Link to={`/menu/${item._id}`}>
+                  <img src={item.thumbnail} alt={item.name} />
+                </Link>
                 <div className='place-order-description'>
                   <div>
                     <h5>{item.name}</h5>
                     <p>{item.category}</p>
                     <br />
-                    <div className="price-container">
+                    <div className='price-container'>
                       <p id='qty'>Quantity: {item.quantity}</p>
-                      <p id='qty'>@{' '}${item.price.toFixed(2)}</p>
+                      <p id='qty'>@ ${item.price.toFixed(2)}</p>
                     </div>
                   </div>
                   <div className='price-wrapper'>
@@ -131,7 +137,11 @@ const PlaceOrderPage = () => {
             </div>
             <div className='bill'>
               <h3>SHIPPING COST</h3>
-              {freeShipping === 'FREE' ? <h4>{freeShipping}</h4> : <h4>${shippingPrice}</h4>}
+              {freeShipping === 'FREE' ? (
+                <h4>{freeShipping}</h4>
+              ) : (
+                <h4>${shippingPrice}</h4>
+              )}
             </div>
             <div className='bill'>
               <h3>SALES TAX</h3>

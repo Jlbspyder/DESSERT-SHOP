@@ -60,6 +60,19 @@
 .order-details {
   text-transform: uppercase;
 }
+.form-cntrl {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 5px;
+  height: 30px;
+  justify-content: start;
+}
+.form-cntrl label {
+  color: inherit;
+  font-size: inherit;
+  margin-top: 5px;
+}
 .order-details span {
   font-size: inherit;
   text-transform: capitalize;

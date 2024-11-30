@@ -1,9 +1,11 @@
 import React from 'react';
+import Meta from '../../components/Meta';
 import './responsibilitypage.css';
 
 const ResponsibilityPage = () => {
   return (
     <div className='responsibility'>
+      <Meta title='JLB24 | Responsibility' />
       <div className='responsibility-header'>
         <h1>Responsibility</h1>
       </div>

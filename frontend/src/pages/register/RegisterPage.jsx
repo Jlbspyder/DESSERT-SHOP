@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+import Meta from '../../components/Meta';
 import { useRegisterMutation } from '../../slices/usersApiSlice';
 import { setCredentials } from '../../slices/authSlice';
 import './registerpage.css';
@@ -55,6 +56,7 @@ const RegisterPage = () => {
 
   return (
     <div className='reg'>
+      <Meta title='JLB24 | Register' />
       <form onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
         <div className='form-control'>

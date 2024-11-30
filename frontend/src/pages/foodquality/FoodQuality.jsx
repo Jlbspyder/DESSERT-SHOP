@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import './foodquality.css';
+import Meta from '../../components/Meta';
 import Spinner from '../../components/Spinner';
 import { useGetMenuQuery } from '../../slices/menuApiSlice';
 import FoodQualityView from '../../components/FoodQualityView';
@@ -12,6 +13,7 @@ const FoodQuality = () => {
 
   return (
     <div className='responsibility'>
+      <Meta title='JLB24 | Food quality' />
       <div className='responsibility-header'>
         <h1>Our Desserts</h1>
       </div>

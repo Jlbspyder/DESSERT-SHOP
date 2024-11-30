@@ -4,6 +4,7 @@ import { FaLocationArrow } from 'react-icons/fa';
 import { useGetAddressQuery } from '../../slices/addressApiSlice';
 import PaginateAddress from '../../components/PaginateAddress';
 import Spinner from '../../components/Spinner';
+import Meta from '../../components/Meta';
 import {
   APIProvider,
   Map,
@@ -52,10 +53,11 @@ const ResturantPage = () => {
            to={'/resturant'}
             className={location.pathname === '/resturant' ? 'career-page' : '' }
           >
-            <h3>Resturants</h3>
+            <h3>Restaurants</h3>
           </Link>
         </div>
         <div className='main-resturant'>
+        <Meta title='JLB24 | Restaurants' />
           <div className='resturant-sidebar'>
             <form onSubmit={submitHandler}>
               <div className='search'>
@@ -72,7 +74,7 @@ const ResturantPage = () => {
                 />
               </div>
             </form>
-            <h1>Resturants</h1>
+            <h1>Restaurants</h1>
             {isLoading ? (
               <Spinner />
             ) : error ? (

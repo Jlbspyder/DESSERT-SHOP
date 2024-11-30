@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Meta from '../../components/Meta';
 import { saveShippingAddress } from '../../slices/cartSlice';
 import CheckoutSteps from '../../components/checkout/CheckoutSteps';
 import './shipping.css';
@@ -34,6 +35,7 @@ const ShippingPage = () => {
   return (
     <>
       <div className='reg'>
+      <Meta title='JLB24 | Shipping address' />
         <CheckoutSteps step1 step2 />
         <form onSubmit={handleSubmit}>
           <h1>Shipping</h1>

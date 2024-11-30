@@ -95,7 +95,7 @@ const Header = () => {
                 }
                 to='/resturant'
               >
-                Resturants
+                Restaurants
               </Link>
             </li>
             <li

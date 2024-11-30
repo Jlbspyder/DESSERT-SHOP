@@ -8,6 +8,7 @@ import { IoIosArrowDropleft } from 'react-icons/io';
 import { IoIosArrowDropright } from 'react-icons/io';
 import { IoStorefrontSharp } from 'react-icons/io5';
 import Spinner from '../../components/Spinner';
+import Meta from '../../components/Meta';
 import { useGetTopMenuQuery } from '../../slices/menuApiSlice';
 import { useGetAddressQuery } from '../../slices/addressApiSlice';
 import './homepage.css'
@@ -85,6 +86,7 @@ const Hero = () => {
 
   return (
     <section className='hero'>
+      <Meta title='JLB24 | Home' />
       {isLoading ? <Spinner /> : <section className='slide-show'>
         <div
           className='slider'

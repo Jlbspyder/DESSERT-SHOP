@@ -1,10 +1,12 @@
 import React from 'react';
+import Meta from '../../components/Meta';
 import { Link } from 'react-router-dom';
 import './privacy.css';
 
 const Privacy = () => {
   return (
     <div className='privacy'>
+      <Meta title='JLB24 | Privacy policy' />
       <div className='career-menu priv'>
         <Link to='/'>
           <h3>Home</h3>

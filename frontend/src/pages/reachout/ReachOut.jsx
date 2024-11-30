@@ -1,9 +1,11 @@
 import React from 'react';
+import Meta from '../../components/Meta';
 import './reachout.css';
 
 const ReachOut = () => {
   return (
     <div className='reachout-page'>
+      <Meta title='JLB24 | Outreach' />
       <div className='reach-out'>
         <h1>Reach Out to us</h1>
         <br />

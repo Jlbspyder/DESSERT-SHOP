@@ -3,6 +3,7 @@ import './menupage.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import Spinner from '../../components/Spinner';
 import MenuList from '../../components/MenuList';
+import Meta from '../../components/Meta';
 import { useSelector, useDispatch } from 'react-redux';
 import PaginateMenu from '../../components/PaginateMenu';
 import { useGetMenuQuery } from '../../slices/menuApiSlice';
@@ -41,6 +42,7 @@ const MenuPage = () => {
 
   return (
     <div className='menu-list'>
+      <Meta title='JLB24 | Desserts' />
       <div className="menu-flex">
         <h2>Desserts</h2>
         <div className='sm-search'><SearchBox /></div>

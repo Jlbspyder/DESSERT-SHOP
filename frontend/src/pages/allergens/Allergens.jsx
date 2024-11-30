@@ -1,9 +1,11 @@
 import React from 'react';
+import Meta from '../../components/Meta';
 import './allergens.css';
 
 const Allergens = () => {
   return (
     <div className='allergens'>
+      <Meta title='JLB24 | Allergens Info' />
       <div className='allergens-info'>
         <h1>Key Standards</h1>
         <p>

@@ -11,6 +11,7 @@ import { RiLockPasswordFill } from 'react-icons/ri';
 import { FaHouseUser } from 'react-icons/fa';
 import { BsFillCreditCard2BackFill } from 'react-icons/bs';
 import { MdPeople } from 'react-icons/md';
+import Meta from '../../components/Meta';
 import { useDispatch, useSelector } from 'react-redux';
 import { useGetMyOrdersQuery } from '../../slices/ordersApiSlice';
 import { toast } from 'react-toastify';
@@ -44,6 +45,7 @@ const Profile = () => {
       <div className='profile-page'>
       <div className="avatar">{userInfo?.firstname.slice(0, 1)}{userInfo?.lastname.slice(0, 1)}</div>
         <div className='profile-page-flex'>
+        <Meta title={`JLB24 |  ${userInfo.firstname}'s profile`} />
           <div className='profile-menu-list'>
             <Link  to={'/myorders'} className='profileMenu'>
               <div className="profile-flex">
@@ -158,9 +160,6 @@ const Profile = () => {
           </div>
           <div className='profile-page-image'>
             <div className='welcome'>
-              {/* <div className='welcome-top'>
-                <h1>WELCOME TO</h1>
-              </div> */}
               <br />
               <div className='welcome-middle'>
                 <h1>Hi</h1>
@@ -168,6 +167,9 @@ const Profile = () => {
               <br/>
               <div className='welcome-bottom'>
                 <h1>{userInfo?.firstname?.toUpperCase()}</h1>
+              </div>
+              <div className='welcome-bottom'>
+                <h1>{userInfo?.lastname?.toUpperCase()}</h1>
               </div>
             </div>
             <img

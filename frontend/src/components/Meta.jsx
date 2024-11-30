@@ -11,10 +11,10 @@ const Meta = ({ title, description, keywords }) => {
   );
 };
 
-Meta.defaultProps = {
-  title: 'JLB 24',
-  description: 'We sell the best dessert at affordable prices',
-  keywords: 'dessert, buy dessert, cheap dessert',
-};
+// Meta.defaultProps = {
+//   title: 'JLB 24',
+//   description: 'We sell the best dessert at affordable prices',
+//   keywords: 'dessert, buy dessert, cheap dessert',
+// };
 
 export default Meta;

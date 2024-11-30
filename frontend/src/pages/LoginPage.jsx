@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import Spinner from '../components/Spinner';
+import Meta from '../components/Meta';
 import { useLoginMutation } from '../slices/usersApiSlice';
 import { setCredentials } from '../slices/authSlice';
 
@@ -47,6 +48,7 @@ const LogIn = () => {
 
   return (
     <div className='reg'>
+      <Meta title='JLB24 | Log in' />
       <form onSubmit={handleSubmit} className='form'>
         <h1>Sign In</h1>
         <div className='form-control'>

@@ -2,6 +2,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useGetMenuQuery } from '../../slices/menuApiSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaShoppingCart } from 'react-icons/fa';
+import Meta from '../../components/Meta';
 import CartItem from '../../components/cartItem/CartItem';
 import './cart.css';
 
@@ -23,6 +24,7 @@ const Cart = () => {
 
   return (
     <div className='your-cart'>
+      <Meta title='JLB24 | Cart' />
       {cartItems.length !== 0 ? (
         <div className='cart-header products'>
           <h2>DESSERTS</h2>

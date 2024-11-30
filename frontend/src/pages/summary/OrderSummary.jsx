@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Spinner from '../../components/Spinner';
+import Meta from '../../components/Meta';
 import { toast } from 'react-toastify';
+import { useGetMenuQuery } from '../../slices/menuApiSlice';
 import { clearCartItems } from '../../slices/cartSlice';
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
 import CheckoutSteps from '../../components/checkout/CheckoutSteps';
@@ -10,18 +12,21 @@ import {
   useGetOrderDetailsQuery,
   usePayOrderMutation,
   useGetPayPalClientIdQuery,
-  useDeliveredOrderMutation
+  useDeliveredOrderMutation,
 } from '../../slices/ordersApiSlice';
 import './ordersummary.css';
 
 const OrderSummary = () => {
-  const { id: orderId } = useParams();
+  const { id: orderId, pageNumber, keyword } = useParams();
   const {
     data: order,
     refetch,
     isLoading,
     error,
   } = useGetOrderDetailsQuery(orderId);
+
+  // const { data, isLoading: loadingMenu, error: menuError } = useGetMenuQuery({ pageNumber, keyword});
+
 
   const [deliverOrder, { isLoading: loadingDeliver }] =
     useDeliveredOrderMutation();
@@ -48,7 +53,6 @@ const OrderSummary = () => {
   } = useGetPayPalClientIdQuery();
 
   const { userInfo } = useSelector((state) => state.auth);
-
 
   useEffect(() => {
     if (!errorPayPal && !loadingPayPal && paypal.clientId) {
@@ -105,7 +109,6 @@ const OrderSummary = () => {
   };
 
   const createOrder = (data, actions) => {
-
     return actions.order
       .create({
         purchase_units: [
@@ -125,6 +128,7 @@ const OrderSummary = () => {
     <Spinner />
   ) : (
     <div className='your-cart summary_'>
+      <Meta title='JLB24 | Order summary' />
       <CheckoutSteps step1 step2 step3 step4 />
       <div className='confirm-page'>
         <div id='info'>
@@ -132,16 +136,18 @@ const OrderSummary = () => {
         </div>
         {order.paid && !order.delivered && !userInfo.isAdmin && (
           <p>
-            Thank you <strong>{userInfo?.firstname}</strong> for your
-            order! We are preparing your desserts. We hope you enjoy your meal.
-            An email has been sent to <strong>{order?.user.email}</strong> with
-            details of your order.
+            Thank you <strong>{userInfo?.firstname}</strong> for your order! We
+            are preparing your desserts. We hope you enjoy your meal. An email
+            has been sent to <strong>{order?.user.email}</strong> with details
+            of your order.
           </p>
         )}
-        {order.paid && order.delivered && !userInfo.isAdmin &&  <p>
-        Thank you <strong>{userInfo?.firstname.toUpperCase()}</strong> for your
-        order! We hope you enjoyed your meal.
-      </p>}
+        {order.paid && order.delivered && !userInfo.isAdmin && (
+          <p>
+            Thank you <strong>{userInfo?.firstname.toUpperCase()}</strong> for
+            your order! We hope you enjoyed your meal.
+          </p>
+        )}
         {order.paid && (
           <div className='order-detail'>
             <div className='bill'>
@@ -178,14 +184,14 @@ const OrderSummary = () => {
           )}
           {order.orderItems.map((item) => (
             <div key={item._id} className='confirm-page-summary'>
-              <img src={item.thumbnail} alt='menu-img' className='menu-img' />
+                <img src={item.thumbnail} alt='menu-img' className='menu-img' />
               <div className='sumary-info'>
                 <div>
                   <h4>{item.name}</h4>
-                    <div className="price-container">
-                      <p id='qty'>Quantity: {item.quantity}</p>
-                      <p id='qty'>@{' '}${item.price.toFixed(2)}</p>
-                    </div>
+                  <div className='price-container'>
+                    <p id='qty'>Quantity: {item.quantity}</p>
+                    <p id='qty'>@ ${item.price.toFixed(2)}</p>
+                  </div>
                 </div>
                 <p>${(item.price * item.quantity).toFixed(2)}</p>
               </div>
@@ -206,8 +212,8 @@ const OrderSummary = () => {
         <div className='order-details'>
           <span>{order.shippingAddress.name},</span>{' '}
           {order.shippingAddress.address}, {order.shippingAddress.city},{' '}
-          {order.shippingAddress.state},{' '}
-          {order.shippingAddress.postalCode}, {order.shippingAddress.country}.
+          {order.shippingAddress.state}, {order.shippingAddress.postalCode},{' '}
+          {order.shippingAddress.country}.
         </div>
         <div className='confirm-page'>
           {order.paid && <h3>ORDER SUMMARY</h3>}
@@ -242,7 +248,7 @@ const OrderSummary = () => {
                 <Spinner />
               ) : (
                 <div>
-                    <div>
+                  <div>
                     <button
                       type='button'
                       className='confirm-order btn-straight'

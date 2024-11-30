@@ -6,6 +6,7 @@ import { FaTimes } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { useGetMyOrdersQuery } from '../../slices/ordersApiSlice';
 import Spinner from "../../components/Spinner";
+import Meta from '../../components/Meta';
 
 const MyOrdersPage = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const MyOrdersPage = () => {
 
   return (
     <div className='my-details'>
+      <Meta title='JLB24 | My orders' />
       { isLoading ? (<Spinner />) : (
         <>
          <Link to='/profile'>

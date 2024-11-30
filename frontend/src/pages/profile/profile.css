@@ -17,7 +17,7 @@
   .welcome {
       position: absolute;
       top: 60px;
-      left: 100px;
+      left: 40px;
   }
   .welcome-middle, .welcome-bottom {
       background: var(--Black);
@@ -40,6 +40,7 @@
   .welcome-bottom {
     width: 100%;
     background: var(--Red);
+    margin-bottom: 10px;
   }
   .welcome-top {
       width: 240px;
@@ -92,6 +93,11 @@
       gap: 2rem;
       z-index: 7777;
     }
+    .welcome {
+      position: absolute;
+      top: 60px;
+      left: 50px;
+  }
     .profile-flex {
       gap: 15px;
     }

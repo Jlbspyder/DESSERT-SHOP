@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import Meta from '../../components/Meta';
 import './careers.css';
 
 const Careers = () => {
@@ -7,6 +8,7 @@ const Careers = () => {
 
   return (
       <div className='career'>
+        <Meta title='JLB24 | Careers' />
         <div className='career-menu'>
           <Link to='/'>
             <h3>Home</h3>

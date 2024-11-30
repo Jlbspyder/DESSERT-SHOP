@@ -1,9 +1,11 @@
 import React from 'react';
+import Meta from '../../components/Meta';
 import './terms.css';
 
 const Terms = () => {
   return (
     <div className='about-page'>
+      <Meta title='JLB24 | Terms & Conditions' />
       <div className='about'>
         <h1>TERMS AND CONDITIONS</h1>
         <p>
