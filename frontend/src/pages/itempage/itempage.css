@@ -101,13 +101,13 @@ select:focus {
 }
 #comments {
   border: none;
+  padding: 10px;
 }
 #comments:focus {
   outline: none;
-  padding: 10px;
 }
 #make-pick {
-  width: 120px;
+  width: 140px;
 }
 .review-info {
   width: 100%;

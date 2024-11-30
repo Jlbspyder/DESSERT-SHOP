@@ -10,8 +10,8 @@ import {
   useGetOrderDetailsQuery,
   usePayOrderMutation,
   useGetPayPalClientIdQuery,
+  useDeliveredOrderMutation
 } from '../../slices/ordersApiSlice';
-import { useDeliveredOrderMutation } from '../../slices/ordersApiSlice';
 import './ordersummary.css';
 
 const OrderSummary = () => {

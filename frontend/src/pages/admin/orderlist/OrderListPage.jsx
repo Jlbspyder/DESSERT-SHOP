@@ -22,8 +22,8 @@ const OrderListPage = () => {
               <th>ID</th>
               <th>DATE</th>
               <th>AMOUNT</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
+              <th>PAID AT</th>
+              <th>DELIVERED AT</th>
               <th></th>
             </tr>
           </thead>
@@ -42,15 +42,16 @@ const OrderListPage = () => {
                   {order.totalPrice.toFixed(2)}
                 </td>
                 <td>
-                  <span className='cell-header'>PAID:</span>
+                  <span className='cell-header'>PAID AT:</span>
                   {order.paid ? (
-                    <FaCheck style={{ color: 'hsl(159, 69%, 38%)' }} />
+                      order.paidAt.substring(11, 16) 
+                    // <FaCheck style={{ color: 'hsl(159, 69%, 38%)' }} />
                   ) : (
                     <FaTimes style={{ color: 'red' }} />
-                  )}
+                  )} {order.paid && ' GMT'}
                 </td>
                 <td>
-                  <span className='cell-header'>DELIVERED:</span>
+                  <span className='cell-header'>DELIVERED AT:</span>
                   {order.delivered ? (
                     order.deliveredAt.substring(11, 16) 
                   ) : (

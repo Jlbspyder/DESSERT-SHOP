@@ -139,7 +139,7 @@ const ItemPage = () => {
               {menu.reviews.map((review) => (
                 <div key={review._id}>
                   <h5>
-                    <strong>{review.name}</strong>
+                    <strong>{review.firstname}{' '}{review.lastname}</strong>
                   </h5>
                   <Rating value={review.rating} />
                   <p>{review.createdAt.substring(0, 10)}</p>

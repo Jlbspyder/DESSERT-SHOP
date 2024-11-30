@@ -127,7 +127,8 @@ const createMenuReview = asynchandler(async (req, res) => {
       throw new Error('Dessert already reviewed');
     }
     const review = {
-      name: req.user.name,
+      firstname: req.user.firstname,
+      lastname: req.user.lastname,
       rating: Number(rating),
       comment,
       user: req.user._id,

@@ -6,7 +6,11 @@ const reviewSchema = mongoose.Schema({
       required: true,
       ref: 'User',
     },
-    name: {
+    firstname: {
+      type: String,
+      required: true,
+    },
+    lastname: {
       type: String,
       required: true,
     },
