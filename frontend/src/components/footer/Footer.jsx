@@ -11,7 +11,7 @@ const Footer = () => {
     <footer>
       <div className="footer-lg">
           <Link to={'/'} className='footer-logo'>
-            <h1>JLB24</h1>
+            <h1>DESSERTS</h1>
           </Link>
           <div className='footer'>
             <div className='footer-info'>

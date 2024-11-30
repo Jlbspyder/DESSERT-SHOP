@@ -173,7 +173,7 @@ const OrderSummary = () => {
         </div>
         <div className='sumary'>
           {order.paid ? (
-            <p id='paid'>Paid on {order.paidAt.substring(11, 19)} GMT</p>
+            <p id='paid'>Paid at {order.paidAt.substring(11, 19)} GMT</p>
           ) : (
             <p id='not-paid'>Not Paid</p>
           )}

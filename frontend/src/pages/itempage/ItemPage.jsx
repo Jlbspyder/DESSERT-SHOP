@@ -143,7 +143,7 @@ const ItemPage = () => {
                   </h5>
                   <Rating value={review.rating} />
                   <p>{review.createdAt.substring(0, 10)}</p>
-                  <p>{review.comment}</p>
+                  <p id='comment'>{review.comment}</p>
                 </div>
               ))}
               <br />
@@ -154,7 +154,7 @@ const ItemPage = () => {
 
             {loadingReview && <Spinner />}
             {userInfo ? (
-              <form onSubmit={submitHandler}>
+              <form id='rev' onSubmit={submitHandler}>
                 <div className='form-control'>
                   <label>Rating</label>
                   <select
