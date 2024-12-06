@@ -82,7 +82,7 @@ const ResturantPage = () => {
             ) : (
               <div className='resturant-locations'>
                 {data?.address.map((location) => (
-                  <div key={location._id} className='addresses'>
+                  <div key={location._id} className='addys'>
                     <h2>{location.name}</h2>
                     <p>{location.location}</p>
                     <span>
