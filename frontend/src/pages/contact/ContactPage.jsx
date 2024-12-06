@@ -11,7 +11,7 @@ const ContactPage = () => {
   return (
     <div className='my-details contact__'>
       <Link to='/profile'>
-        <IoIosArrowBack className='back' />
+        <IoIosArrowBack className='back__' />
       </Link>
       <h2>CONTACT PREFERENCES</h2>
       <p>

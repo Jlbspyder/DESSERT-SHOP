@@ -20,6 +20,7 @@ const ItemPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+
   const {
     data: menu,
     isLoading,
@@ -60,10 +61,6 @@ const ItemPage = () => {
     dispatch(removeFromCart(item))
   }
   
-  const deleteCartHandler = async (item) => { 
-    dispatch(deleteCart(item))
-  }
-
   const submitHandler = async (e) => {
     e.preventDefault();
     try {

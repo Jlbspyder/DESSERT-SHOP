@@ -53,6 +53,11 @@ const cartSlice = createSlice({
       state.shippingAddress = action.payload;
       return updateCart(state);
     },
+    // saveAddressBook: (state, action) => {
+    //   const address = action.payload;
+    //   state.addressBook = [...state.addressBook, address];
+    //   return updateCart(state);
+    // },
     savePaymentMethod: (state, action) => {
       state.paymentMethod = action.payload;
       return updateCart(state);
@@ -88,6 +93,7 @@ export const {
   savePaymentMethod,
   clearShippingAddress,
   resetCart,
+  // saveAddressBook,
   // saveCardDetails,
   clearCartItems
 } = cartSlice.actions;

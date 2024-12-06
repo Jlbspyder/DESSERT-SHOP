@@ -2,12 +2,14 @@ import mongoose from "mongoose";
 import dotenv from 'dotenv'
 import users  from './data/users.js'
 import address from "./data/address.js";
+import addressBook from "./data/addressBook.js";
 import colors from 'colors'
 import { menu } from './data/menu.js'
 import User from './models/userModel.js'
 import Menu from './models/menuModel.js'
 import Order from './models/orderModel.js'
 import Address from "./models/addressModel.js";
+import AddressBook from "./models/addressBookModel.js";
 import connectDB from './config/db.js'
 
 dotenv.config()
@@ -20,6 +22,7 @@ const importData = async () => {
        await Menu.deleteMany(); 
        await User.deleteMany();
        await Address.deleteMany(); 
+       await AddressBook.deleteMany(); 
 
        const createdUsers = await User.insertMany(users);
        const adminUser = createdUsers[0]._id
@@ -37,6 +40,12 @@ const importData = async () => {
        });
        
        await Address.insertMany(createdAddy);
+
+       const createdAddyBook = addressBook.map((addy) => {
+        return { ...addy, user: adminUser}
+       });
+       
+       await AddressBook.insertMany(createdAddyBook);
        
 
        console.log('Data Imported'.green.inverse)
@@ -53,6 +62,7 @@ const destroyData = async () => {
         await Menu.deleteMany(); 
         await User.deleteMany();
         await Address.deleteMany(); 
+        await AddressBook.deleteMany(); 
 
         console.log('Data Destroyed!'.red.inverse)
         process.exit()

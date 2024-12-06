@@ -1,48 +1,57 @@
 .contact-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    padding: 10px;
-    border-top: 5px solid var(--Beige);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border-top: 5px solid var(--Beige);
 }
-.contact__ {
-    padding-inline: 20px;
+.back__ {
+  position: absolute;
+  top: 22px;
+  left: -5px;
+  font-size: 30px;
+  color: var(--Red);
 }
 .contact-flex button {
-    padding: 0.5em 1em;
-    text-transform: uppercase;
-    background: rgb(223, 214, 214);
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+  background: rgb(223, 214, 214);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
 }
 .no-border {
-    border-top: 1px solid var(--white);
-    border-bottom: 1px solid var(--White);
-    height: 50px;
+  border-top: 1px solid var(--white);
+  border-bottom: 1px solid var(--White);
+  height: 50px;
 }
 .contact-flex h5 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .discount {
-    font-size: 70px;
+  font-size: 70px;
 }
 .preference {
-    padding: 10px 10px 20px 10px;
-    text-align: center;
-    background: var(--White);
+  padding: 10px 10px 20px 10px;
+  text-align: center;
+  background: var(--Beige);
 }
 .preference p {
-    margin: 10px 0 20px 0;
+  margin: 10px 0 20px 0;
 }
 .ques {
-    font-size: 20px;
+  font-size: 20px;
+}
+@media (min-width: 600px) {
+  .contact__ {
+    max-width: 90%;
+    margin-inline: auto;
+    border: 1px solid var(--White);
+  }
 }
 @media (min-width: 1000px) {
-    .contact__ {
-        max-width: 60%;
-        margin-inline: auto;
-        border: 1px solid var(--White);
-    }
+  .contact__ {
+    max-width: 60%;
+  }
 }

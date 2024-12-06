@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { RiShoppingBagFill } from 'react-icons/ri';
 import { BsChatDots } from 'react-icons/bs';
-import { MdNavigateNext } from "react-icons/md";
+import { MdNavigateNext } from 'react-icons/md';
 import { FaInfoCircle } from 'react-icons/fa';
 import { MdCardGiftcard } from 'react-icons/md';
 import { MdOutlineSwitchAccount } from 'react-icons/md';
@@ -29,7 +29,6 @@ const Profile = () => {
 
   const { userInfo } = useSelector((state) => state.auth);
 
-
   const handleSignout = async () => {
     try {
       await signout().unwrap();
@@ -43,12 +42,15 @@ const Profile = () => {
   return (
     <>
       <div className='profile-page'>
-      <div className="avatar">{userInfo?.firstname.slice(0, 1)}{userInfo?.lastname.slice(0, 1)}</div>
+        <div className='avatar'>
+          {userInfo?.firstname.slice(0, 1)}
+          {userInfo?.lastname.slice(0, 1)}
+        </div>
         <div className='profile-page-flex'>
-        <Meta title={`JLB24 |  ${userInfo.firstname}'s profile`} />
+          <Meta title={`JLB24 |  ${userInfo.firstname}'s profile`} />
           <div className='profile-menu-list'>
-            <Link  to={'/myorders'} className='profileMenu'>
-              <div className="profile-flex">
+            <Link to={'/myorders'} className='profileMenu'>
+              <div className='profile-flex'>
                 <div>
                   <RiShoppingBagFill className='account-profile-icon symbol' />
                 </div>
@@ -58,7 +60,7 @@ const Profile = () => {
               </div>
               <MdNavigateNext className='profile-btn' />
             </Link>
-            <Link className='profileMenu'>
+            {/* <Link className='profileMenu'>
               <div className="profile-flex">
                 <div>
                   <FaInfoCircle className='account-profile-icon symbol' />
@@ -68,8 +70,8 @@ const Profile = () => {
                 </div>
               </div>
               <MdNavigateNext className='profile-btn' />
-            </Link>
-            <Link className='profileMenu'>
+            </Link> */}
+            {/* <Link className='profileMenu'>
               <div className="profile-flex">
                 <div>
                   <MdCardGiftcard className='account-profile-icon symbol' />
@@ -79,9 +81,9 @@ const Profile = () => {
                 </div>
               </div>
               <MdNavigateNext className='profile-btn' />
-            </Link>
+            </Link> */}
             <Link to={'/mydetails'} className='profileMenu'>
-              <div className="profile-flex">
+              <div className='profile-flex'>
                 <div>
                   <MdOutlineSwitchAccount className='account-profile-icon symbol' />
                 </div>
@@ -92,7 +94,7 @@ const Profile = () => {
               <MdNavigateNext className='profile-btn' />
             </Link>
             <Link to={'/password'} className='profileMenu'>
-              <div className="profile-flex">
+              <div className='profile-flex'>
                 <div>
                   <RiLockPasswordFill className='account-profile-icon symbol' />
                 </div>
@@ -103,7 +105,7 @@ const Profile = () => {
               <MdNavigateNext className='profile-btn' />
             </Link>
             <Link to={'/address'} className='profileMenu'>
-              <div className="profile-flex">
+              <div className='profile-flex'>
                 <div>
                   <FaHouseUser className='account-profile-icon symbol' />
                 </div>
@@ -114,7 +116,7 @@ const Profile = () => {
               <MdNavigateNext className='profile-btn' />
             </Link>
             <Link className='profileMenu'>
-              <div className="profile-flex">
+              <div className='profile-flex'>
                 <div>
                   <BsFillCreditCard2BackFill className='account-profile-icon symbol symbol' />
                 </div>
@@ -125,7 +127,7 @@ const Profile = () => {
               <MdNavigateNext className='profile-btn' />
             </Link>
             <Link to={'/contact'} className='profileMenu'>
-              <div className="profile-flex">
+              <div className='profile-flex'>
                 <div>
                   <BsChatDots className='account-profile-icon symbol' />
                 </div>
@@ -135,8 +137,8 @@ const Profile = () => {
               </div>
               <MdNavigateNext className='profile-btn' />
             </Link>
-            <Link className='profileMenu'>
-              <div className="profile-flex">
+            <Link to={`/socials`} className='profileMenu'>
+              <div className='profile-flex'>
                 <div>
                   <MdPeople className='account-profile-icon symbol' />
                 </div>
@@ -147,7 +149,7 @@ const Profile = () => {
               <MdNavigateNext className='profile-btn' />
             </Link>
             <Link className='profileMenu' onClick={handleSignout}>
-              <div className="profile-flex">
+              <div className='profile-flex'>
                 <div>
                   <FaSignOutAlt className='account-profile-icon symbol' />
                 </div>
@@ -164,7 +166,7 @@ const Profile = () => {
               <div className='welcome-middle'>
                 <h1>Hi</h1>
               </div>
-              <br/>
+              <br />
               <div className='welcome-bottom'>
                 <h1>{userInfo?.firstname?.toUpperCase()}</h1>
               </div>

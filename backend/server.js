@@ -13,6 +13,7 @@ import addressRoute from './routes/addressRoute.js'
 import menuRoute from './routes/menuRoute.js';
 import userRoute from './routes/userRoute.js';
 import orderRoute from './routes/orderRoute.js';
+import addressBookRoute from './routes/addressBookRoute.js'
 
 globalThis.Buffer = Buffer;
 
@@ -29,10 +30,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use('/api/address', addressRoute);
+app.use('/api/addressbook', addressBookRoute);
 app.use('/api/menu', menuRoute);
 app.use('/api/users', userRoute);
 app.use('/api/orders', orderRoute);
-app.use('/api/upload', uploadRoute);
+app.use('/api/uploads', uploadRoute);
 
 app.get('/api/config/paypal', (req, res) =>
   res.send({ clientId: process.env.PAYPAL_CLIENT_ID })

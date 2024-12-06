@@ -38,6 +38,7 @@ const CartItem = ({item, quan, thumbnail, name, price, _id }) => {
     dispatch(deleteCart(item))
   }
 
+
   return (
     <div className='cart-section'>
     <div className='cart-item'>
@@ -47,7 +48,7 @@ const CartItem = ({item, quan, thumbnail, name, price, _id }) => {
             <img src={thumbnail} alt={name} />
           </div>
           <div className='cart-info'>
-            <p>${price.toFixed(2)}</p>
+            <p>${price}</p>
             <Link to={`/menu/${_id}`}><h4>{name}</h4></Link>
           </div>
         </div>

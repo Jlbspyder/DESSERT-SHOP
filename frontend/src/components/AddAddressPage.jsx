@@ -1,19 +1,40 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { saveShippingAddress } from '../slices/cartSlice';
+import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { saveAddresses } from '../slices/addressBookSlice';
+import { useCreateAddressMutation, useGetAddressBookDetailsQuery } from '../slices/addressBookApiSlice';
+import { createAddressBook } from '../../../backend/controllers/addressBook';
 
-const AddAddressPage = () => {
+
+const AddAddressPage = ({setAdd}) => {
   const cart = useSelector((state) => state.cart);
-  const { shippingAddress } = cart;
+  const { addressBook } = cart;
+  const address = useSelector((state) => state.address);
+
+  const { addresses } = address;
+
   const [shipData, setShipData] = useState({
-    name: shippingAddress.name || '',
-    address: shippingAddress.address || '',
-    city: shippingAddress.city || '',
-    state: shippingAddress.state || '',
-    postalCode: shippingAddress.postalCode || '',
-    country: shippingAddress.country || '',
+    name: '',
+    address: '',
+    city: '',
+    state: '',
+    postalCode: '',
+    country: '',
   });
+
+  
+  const { id: addressId } = useParams();
+
+  const {
+    data: addy,
+    isLoading,
+    error,
+    refetch,
+  } = useGetAddressBookDetailsQuery(addressId);
+
+
+  const [createAddress, {isLoading: loadingAddressBook} ] = useCreateAddressMutation()
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -23,9 +44,18 @@ const AddAddressPage = () => {
     setShipData((prevShipData) => ({ ...prevShipData, [name]: value }));
   };
 
-  const handleSubmit = () => {
-    setAdd(true)
-    // dispatch(saveShippingAddress({ ...shipData }));
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // dispatch(saveAddresses({...shipData}))
+    // toast.success('Address created!');
+    try {
+      const res = await createAddress(shipData).unwrap();
+      dispatch(saveAddresses({ ...res }));
+      toast.success('Address created!');
+      setAdd(false)
+    } catch (err) {
+      toast.error(err?.data?.message || err.error);
+    }
     navigate('/address');
   };
 

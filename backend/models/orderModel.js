@@ -28,6 +28,21 @@ const orderSchema = mongoose.Schema(
       state: { type: String, required: false },
       country: { type: String, required: false },
     },
+    addressBook: [
+      {
+        name: { type: String, required: false },
+        address: { type: String, required: false },
+        city: { type: String, required: false },
+        postalCode: { type: String, required: false },
+        state: { type: String, required: false },
+        country: { type: String, required: false },
+        menu: {
+          type: mongoose.Schema.Types.ObjectId,
+          required: false,
+          ref: 'User',
+        },
+      },
+    ],
     // cardDetails: {
     //   name: { type: String, required: true },
     //   cardNum: { type: Number, required: true },

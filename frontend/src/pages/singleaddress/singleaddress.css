@@ -1,0 +1,57 @@
+.single-address {
+    position: relative;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 400px;
+}
+.bac {
+    position: absolute;
+    color: var(--Red);
+    top: 70px;
+    left: 10px;
+    font-size: 30px;
+}
+.address-info {
+    padding: 20px 10px;
+    border-bottom: 1px solid var(--Beige);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.address-header {
+    margin-top: 80px;
+    text-align: center;
+}
+.address-header h3 {
+    color: var(--Red);
+}
+.address-sub-header {
+    margin-top: 10px;
+    background: var(--Beige);
+    padding: 10px;
+}
+.address-default {
+    padding-left: 10px;
+}
+.address-bg {
+    margin: 20px auto;
+    width: 95%;
+}
+.bottom {
+    margin-top: 10px;
+    background: var(--White);
+}
+@media (min-width: 600px) {
+    .single-address {
+        width: 90%;
+        margin: 20px auto 20px auto;
+    }
+}
+@media (min-width: 1000px) {
+    .single-address {
+        width: 60%;
+        margin-inline: auto;
+    }
+}

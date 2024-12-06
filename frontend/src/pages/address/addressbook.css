@@ -1,7 +1,8 @@
 .address-book {
   position: relative;
-  margin-top: 70px;
-  padding-block: 10px;
+  margin: 65px 0 0 0;
+  background: var(--Offwhite);
+  padding: 10px 0 20px 0;
   min-height: 400px;
 }
 .address-book h2 {
@@ -12,8 +13,15 @@
 .button-bg {
   height: 90px;
   padding: 15px;
-  background: rgb(220, 210, 210);
-  background: var(--White);
+  background: var(--Beige);
+}
+.addresses {
+  width: 100%;
+  border-radius: 0;
+  padding: 15px 0 5px 0;
+}
+.addresses a {
+  color: inherit;
 }
 .add-address {
   width: 100%;
@@ -24,47 +32,67 @@
   background: var(--Offwhite);
   border: 1px solid var(--Beige);
   cursor: pointer;
+  border-radius: 5px;
   text-transform: uppercase;
 }
 .add-address:hover {
   transform: scale(0.98);
 }
 #default-address {
-  font-size: 16px;
-  padding-left: 25px;
-  height: 30px;
+  padding: 10px 20px;
 }
 .default-address {
-  padding: 10px 0 0 25px;
+  padding: 10px 20px;
   color: blue;
-  border-top: 1px solid var(--Beige);
   cursor: pointer;
+}
+#line {
+  border-top: 1px solid var(--Beige);
 }
 .contact__ span {
     padding-left: 20px;
+}
+.contact-info {
+  padding: 10px 0 10px 10px;
 }
 .address-flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-right: 20px;
+  cursor: pointer;
 }
 .default-address-check {
   color: var(--Green);
 }
+.address-check {
+  font-size: 30px;
+  color: var(--Black);
+  cursor: pointer;
+}
 @media (min-width: 600px) {
-  #default-address {
+  .contact-info {
     padding-left: 30px;
   }
+  #default-address {
+    padding: 10px 40px;
+  }
   .default-address {
-    padding: 10px 0 0 30px;
+    padding: 10px 40px;
   }
 }
 @media (min-width: 1000px) {
-  #default-address {
-    padding-left: 20px;
-  }
-  .default-address {
-    padding: 10px 0 0 20px;
-  }
+ .addresses {
+  width: 70%;
+  margin: auto;
+  border-radius: 5px;
+  background: var(--White);
+ }
+ .address-book {
+  background: var(--Offwhite);
+ }
+ .button-bg {
+  width: 70%;
+  margin: auto;
+ }
 }

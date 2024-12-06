@@ -39,7 +39,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Live Site URL: [https://dessert-shop.onrender.com/](https://your-live-site-url.com)
+- Live Site URL: [https://dessert-shop.onrender.com/](https://dessert-shop.onrender.com/)
 
 ### Built with
 
@@ -49,10 +49,11 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
+- [Node.js](https://nodejs.org/en) - Backend environment
 - [Redux](https://redux.js.org/) - For state management
 - [Redux Toolkit](https://redux-toolkit.js.org/) - For state management
 - [MongoDB](https://www.mongodb.com/) - For database management
-- [Express](https://expressjs.com/) - server
+- [Express](https://expressjs.com/) - Server
 - [JWT](https://jwt.io/) - For authentication
 - [Mongoose](https://mongoosejs.com/) - For data modelling
 

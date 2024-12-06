@@ -28,7 +28,7 @@ const loginUser = asynchandler(async (req, res) => {
 });
 
 //Register user
-//GET /api/users
+//POST /api/users
 //Public access
 const regUser = asynchandler(async (req, res) => {
   const { firstname, lastname, email, password } = req.body;
