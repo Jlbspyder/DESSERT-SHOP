@@ -26,7 +26,7 @@ const SearchBox = () => {
           name='q'
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
-          placeholder='Search Menu...'
+          placeholder='Search Desserts...'
         />
       <button type='submit' className='search-menu'>
         <FaSearch />

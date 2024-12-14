@@ -48,7 +48,7 @@ const CartItem = ({item, quan, thumbnail, name, price, _id }) => {
             <img src={thumbnail} alt={name} />
           </div>
           <div className='cart-info'>
-            <p>${price}</p>
+            <p>${price.toFixed(2)}</p>
             <Link to={`/menu/${_id}`}><h4>{name}</h4></Link>
           </div>
         </div>

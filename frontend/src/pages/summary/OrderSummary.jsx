@@ -53,6 +53,12 @@ const OrderSummary = () => {
   } = useGetPayPalClientIdQuery();
 
   const { userInfo } = useSelector((state) => state.auth);
+  
+  const cart = useSelector((state) => state.cart);
+  const { shippingPrice } = cart;
+
+  const freeShipping = shippingPrice == 0 && 'FREE';
+
 
   useEffect(() => {
     if (!errorPayPal && !loadingPayPal && paypal.clientId) {
@@ -97,12 +103,12 @@ const OrderSummary = () => {
     });
   };
 
-  const onApproveTest = async () => {
-    await payForOrder({ orderId, details: { payer: {} } });
-    refetch();
-    dispatch(clearCartItems());
-    toast.success('Payment successful');
-  };
+  // const onApproveTest = async () => {
+  //   await payForOrder({ orderId, details: { payer: {} } });
+  //   refetch();
+  //   dispatch(clearCartItems());
+  //   toast.success('Payment successful');
+  // };
 
   const onError = (error) => {
     toast.error(error.message);
@@ -223,7 +229,7 @@ const OrderSummary = () => {
           </div>
           <div className='order-sumary'>
             <div>SHIPPING COST</div>
-            <div>${order.shippingPrice.toFixed(2)}</div>
+            {freeShipping === 'FREE' ? <div>{freeShipping}</div> : <div>${order.shippingPrice.toFixed(2)}</div>}
           </div>
           <div className='order-sumary'>
             <div>TOTAL BEFORE TAX</div>
@@ -248,7 +254,7 @@ const OrderSummary = () => {
                 <Spinner />
               ) : (
                 <div>
-                  <div>
+                  {/* <div>
                     <button
                       type='button'
                       className='confirm-order btn-straight'
@@ -256,7 +262,7 @@ const OrderSummary = () => {
                     >
                       TEST PAY
                     </button>
-                  </div>
+                  </div> */}
                   <PayPalButtons
                     createOrder={createOrder}
                     onApprove={onApprove}

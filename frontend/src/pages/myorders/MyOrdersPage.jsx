@@ -45,7 +45,7 @@ const MyOrdersPage = () => {
                     <span className='cell-header'>DATE:</span> {order.createdAt.substring(0, 10)}
                   </td>
                   <td>
-                  <span className='cell-header'>TOTAL:</span> {order.totalPrice}
+                  <span className='cell-header'>TOTAL:</span> {order.totalPrice.toFixed(2)}
                   </td>
                   <td>
                   <span className='cell-header'>PAID:</span> {order.paid ? (order.paidAt.substring(11, 16)) : (<FaTimes style={{color: 'red'}} />)}{order.paid && ' GMT'}

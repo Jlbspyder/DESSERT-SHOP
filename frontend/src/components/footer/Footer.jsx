@@ -73,7 +73,7 @@ const Footer = () => {
           </li>
         </div>
         <h6>
-          TM & Copyright 2024 Desserts Corporation. All Rights Reserved.
+          TM & Copyright 2025 Desserts Corporation. All Rights Reserved.
         </h6>
       </div>
     </footer>

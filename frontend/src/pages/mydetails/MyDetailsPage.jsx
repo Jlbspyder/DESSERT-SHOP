@@ -9,7 +9,7 @@ const MyDetailsPage = () => {
   const { userInfo } = useSelector((state) => state.auth);
 
   return (
-    <div className='my-details'>
+    <div className='my-details dets__'>
       <Meta title='JLB24 | My details' />
         <Link to='/profile'>
           <IoIosArrowBack className='back' />
